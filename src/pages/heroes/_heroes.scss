@@ -1,0 +1,70 @@
+@import '../../scss/_vars.scss';
+.heroes {
+  padding: 160px 0 160px;
+  background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
+  color: #fff;
+  &__top {
+    padding-bottom: 80px;
+    margin-bottom: 100px;
+  }
+  &__list {
+    
+  }
+  &__item {
+    margin-bottom: 100px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    border-radius: 200px;
+    border: 2px solid $main;
+    &:nth-child(even) {
+      background-color: #fff;
+      color: #000;
+      border-color: transparent;
+      .heroes__img-box img{
+        border-color: $main;
+      }
+    }
+  }
+  &__img-box {
+    width: 100%;
+    max-width: 350px;
+    img {
+      height: 100%;
+      border-radius: 200px;
+      border: 2px solid #fff;
+    }
+  }
+  &__info {
+
+  }
+  &__type {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    font-size: 24px;
+  }
+  &__name {
+    margin-bottom: 20px;
+    font-size: 48px;
+    text-transform: uppercase;
+  }
+  &__title {
+    margin-bottom: 30px;
+    font-size: 96px;
+    text-transform: uppercase;
+    color: $main;
+  }
+  &__text {
+    margin-bottom: 50px;
+  }
+  &__link {
+    // background-color: $main;
+  }
+  &__btn {
+    margin: 0 auto;
+    max-width: 450px;
+    display: block;
+    background-color: #fff;
+  }
+}
