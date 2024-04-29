@@ -1,0 +1,190 @@
+.promo {
+    padding: 180px 0 100px;
+    background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
+    &__title {
+        color: #ffffff;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 185px;
+    }
+    &__inner {
+        width: 100%;
+        position: relative;
+    }
+    &__line {
+        width: calc((100vw - 1920px) / 2 + 1820px);
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        pointer-events: none;
+        img {
+            width: 100%;
+        }
+    }
+}
+.heading {
+    padding: 100px 0;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 30px;
+        border-radius: 120px;
+        height: 120px;
+        border: 1px solid #ffffff;
+        &:nth-child(5n+1) {
+            width: calc(40% - 10px);
+        }
+        &:nth-child(5n+2) {
+            width: calc(60% - 10px);
+        }
+        &:nth-child(5n+3) {
+            width: calc(25% - 10px);
+        }
+        &:nth-child(5n+4) {
+            width: calc(35% - 20px);
+        }
+        &:nth-child(5n+5) {
+            width: calc(40% - 20px);
+        }
+        span {
+            font-size: 40px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+    }
+    &__img {
+        overflow: hidden;
+        height: 120px;
+        width: 200px;
+        border-radius: 200px;
+        border: 1px solid #ffffff;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+@media(max-width: 1920px) {
+    .promo {
+        padding: calcVW(180) 0 calcVW(100);
+        &__title {
+            font-size: calcVW(185);
+        }
+        &__line {
+            width: calc(100vw - calcVW(100));
+        }
+    }
+    .heading {
+        padding: calcVW(100) 0;
+        &__list {
+            gap: calcVW(20);
+        }
+        &__item {
+            gap: calcVW(30);
+            border-radius: calcVW(120);
+            height: calcVW(120);
+            &:nth-child(5n+1) {
+                width: calc(40% - calcVW(10));
+            }
+            &:nth-child(5n+2) {
+                width: calc(60% - calcVW(10));
+            }
+            &:nth-child(5n+3) {
+                width: calc(25% - calcVW(10));
+            }
+            &:nth-child(5n+4) {
+                width: calc(35% - calcVW(20));
+            }
+            &:nth-child(5n+5) {
+                width: calc(40% - calcVW(20));
+            }
+            span {
+                font-size: calcVW(40);
+            }
+        }
+        &__img {
+            height: calcVW(120);
+            width: calcVW(200);
+            border-radius: calcVW(200);
+            border: 1px solid #ffffff;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .promo {
+        padding: 140px 0 0;
+        &__line {
+            width: calc(100vw - 17px);
+            height: 47%;
+            object-fit: fill;
+        }
+    }
+    .heading {
+        padding: 40px 0;
+        &__list {
+            gap: 10px;
+        }
+        &__item {
+            gap: 10px;
+            border-radius: 50px;
+            height: 50px;
+            &:nth-child(5n+1) {
+                width: calc(50% - 5px);
+                order: 1;
+            }
+            &:nth-child(5n+2) {
+                width: 100%;
+                order: 3;
+            }
+            &:nth-child(5n+3) {
+                width: calc(50% - 5px);
+                order: 4;
+            }
+            &:nth-child(5n+4) {
+                width: calc(50% - 5px);
+                order: 5;
+            }
+            &:nth-child(5n+5) {
+                order: 2;
+                width: calc(50% - 5px);
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+        &__img {
+            height: 50px;
+            width: 80px;
+            border-radius: 50px;
+            border: 1px solid #ffffff;
+        }
+    }
+}
+@media(max-width: 576px) {
+    .promo {
+        &__line {
+            height: 37%;
+        }
+    }
+}
+@media(max-width: 370px) {
+    .promo {
+        &__line {
+            height: 25%;
+        }
+    }
+}

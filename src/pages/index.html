@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+	@include('./../components/head/_head.html', {
+	"title": "ROCKET MAG",
+	"filecss": "index"
+	})
+
+<body>
+	@include('./../components/header/_header.html')
+	<section class="promo">
+		<div class="container">
+			<h1 class="promo__title title">rocket mag 2024</h1>
+		</div>
+		<div class="promo__inner">
+			<img
+			class="promo__line"
+				srcset="
+					/img/promo/line-min.png 320w,
+					/img/promo/line.png 769w,
+				"
+				sizes="(max-width: 320px) 280px,
+							(max-width: 768px) 768px,
+							769px"
+				src="/img/promo/line.png"
+				alt="line" />
+
+			@include('./../components/mainSlider/_mainSlider.html')
+
+		</div>
+		<div class="divider divider--right"><span></span></div>
+		<div class="heading">
+			<div class="container">
+				<ul class="heading__list">
+					<li class="heading__item">
+						<div class="heading__img">
+							<img src="/img/heading/1.jpg" alt="photo">
+						</div>
+						<span>Блогеры</span>
+					</li>
+					<li class="heading__item">
+						<div class="heading__img">
+							<img src="/img/heading/2.jpg" alt="photo">
+						</div>
+						<span>Скандальные новости</span>
+					</li>
+					<li class="heading__item">
+						<div class="heading__img">
+							<img src="/img/heading/3.jpg" alt="photo">
+						</div>
+						<span>Лофт</span>
+					</li>
+					<li class="heading__item">
+						<div class="heading__img">
+							<img src="/img/heading/4.jpg" alt="photo">
+						</div>
+						<span>Видео</span>
+					</li>
+					<li class="heading__item">
+						<div class="heading__img">
+							<img src="/img/heading/5.jpg" alt="photo">
+						</div>
+						<span>Сплетни</span>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</section>
+	
+	
+	<script src="/js/libs/gsap.min.js"></script> 
+	<!-- <script src="/js/libs/swiper-bundle.min.js"></script>
+	<script src="/js/libs/ScrollTrigger.min.js"></script>
+	<script src="/js/libs/ScrollToPlugin.min.js"></script>
+	<script src="/js/libs/MotionPathPlugin.min.js"></script>
+	<script src="/js/libs/SmoothScroll.min.js"></script> -->
+	<script src="/js/main.bundle.js"></script>
+	<script src="/js/index.bundle.js"></script>
+
+</body>
+
+</html>

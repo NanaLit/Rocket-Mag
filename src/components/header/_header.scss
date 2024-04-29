@@ -1,0 +1,123 @@
+.header {
+    padding: 25px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 5;
+    overflow: hidden;
+    &__nav {
+        width: 100%;
+    }
+    &__menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &__item {
+        text-transform: uppercase;
+    }
+    img {
+        width: 130px;
+        height: auto;
+        object-fit: contain;
+    }
+    &__burger {
+        display: none;
+    }
+    &__logo {
+        display: none;
+    }
+}
+@media(max-width: 1920px) {
+    .header {
+        padding: calcVW(25) 0;
+        img {
+            width: calcVW(130);
+        }
+    }
+}
+@media(max-width: 768px) {
+    .header {
+        padding: 0;
+        background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
+        .noise {
+            display: none;
+        }
+        &__item {
+            &:nth-of-type(3) {
+                display: none;
+            }
+        }
+        &__logo {
+            display: block;
+            position: absolute;
+            left: 20px;
+            top: 33px;
+        }
+        img {
+            width: 100px;
+        }
+        &__nav {
+            position: relative;
+            height: 100px;;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            border-bottom: 1px solid #ffffff;
+        }
+        &__menu {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            transition: all 0.5s ease-in-out;
+            background-color: #ffffff;
+            &--active {
+                left: 0;
+            }
+        }
+        &__burger {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            display: flex;
+            background-color: $main;
+            border: none;
+            outline: none;
+            align-items: start;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            flex-direction: column;
+            gap: 6px;
+            padding-left: 23px;
+            span {
+                display: block;
+                width: 24px;
+                height: 1px;
+                background-color: #ffffff;
+                &:nth-child(3) {
+                    width: 12px;
+                }
+                &:nth-child(4) {
+                    position: absolute;
+                    rotate: 45deg;
+                    opacity: 0;
+                }
+                &:nth-child(5) {
+                    position: absolute;
+                    rotate: -45deg;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

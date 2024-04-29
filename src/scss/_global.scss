@@ -1,0 +1,236 @@
+
+@import '_fonts.scss';
+@import '_reset.scss';
+@import '_vars.scss';
+@import '_functions.scss';
+html,
+
+body {
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  position: relative;
+  height: 100%;
+  color: rgba(0, 0, 0, 1);
+  font-family: "Gilroy", sans-serif;
+  font-size: 20px;
+  line-height: normal;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  line-height: 1.1;
+}
+.container {
+  max-width: 1920px;
+  padding: 0 140px;
+  margin: 0 auto;
+}
+.title {
+  font-family: "Gilroy", sans-serif;
+  text-transform: uppercase;
+  font-size: 200px;
+  text-align: end;
+  font-weight: 300;
+  margin-bottom: 100px;
+  line-height: 1;
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+ 
+.spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #FFF #FFF transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.spinner::after,
+.spinner::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #FFFFFF #FFFFFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+.spinner::before {
+  width: 32px;
+  height: 32px;
+  border-color: #FFF #FFF transparent transparent;
+  animation: rotation 3s linear infinite;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+    
+ 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.noise::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  animation: tvShow .5s linear infinite;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 2;
+}
+@keyframes tvShow {
+  0%{
+    background-image: url(/img/noise2.png);
+    background-size: 15%;
+  }
+  20%{
+    background-image: url(/img/noise3.png);
+    background-size: 15%;
+  }
+  40%{
+    background-image: url(/img/noise4.png);
+    background-size: 15%;
+  }
+  60%{
+    background-image: url(/img/noise3.png);
+    background-size: 15%;
+  }
+  80%{
+    background-image: url(/img/noise2.png);
+    background-size: 15%;
+  }
+  100%{
+    background-image: url(/img/noise4.png);
+    background-size: 15%;
+  }
+}
+.button {
+  width: 100%;
+  border-radius: 120px;
+  background-color: rgba(123, 54, 255, 1);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  display: flex;
+  &--right {
+    justify-content: end;
+  }
+  span {
+    display: block;
+    height: 100%;
+    background-color: #ffffff;
+    width: calc((100% - 140px));
+  }
+}
+@media (max-width: 1920px) {
+  body {
+    font-size: calcVW(20);
+  }
+  .container {
+    padding: 0 calcVW(140);
+  }
+  .title {
+    font-size: calcVW(200);
+    margin-bottom: calcVW(100);
+  }
+  
+  .button {
+    border-radius: calcVW(120);
+    font-size: calcVW(28);
+  }
+
+  .divider {
+    span {
+      width: calc((100% - calcVW(140)));
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    padding: 0 20px;
+  }
+  .title {
+    font-size: 48px;
+    text-align: start;
+    margin-bottom: 30px;
+  }
+  
+  .button {
+    border-radius: 70px;
+    font-size: 20px;
+  }
+  .divider {
+    span {
+      width: calc((100% - 20px));
+    }
+  }
+}
