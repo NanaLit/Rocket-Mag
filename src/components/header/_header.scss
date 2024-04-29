@@ -42,7 +42,8 @@
 @media(max-width: 768px) {
     .header {
         padding: 0;
-        background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
+        position: absolute;
+        background: transparent;
         .noise {
             display: none;
         }
