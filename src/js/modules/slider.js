@@ -51,7 +51,7 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
                 dot.setAttribute('disabled', true)
             }))
             slides.forEach((slide, i) => {
-                tlToggleContent.to(titleHide, {y: "110%"})
+                tlToggleContent.to(titleHide, {y: "115%"})
                                 .to(descrHide, {y: "110%"}, "<0")
                                 .to(buttonHide, {y: "110%"}, "<0")
                                 .to(current, {y: "110%"}, "<0")

@@ -31,7 +31,7 @@
     &__title {
         text-transform: uppercase;
         font-size: 64px;
-        min-height: 205px;
+        height: 180px;
         margin-bottom: 25px;
         overflow: hidden;
         font-weight: 400;
@@ -82,21 +82,6 @@
             filter: brightness(.8);
         }
     }
-    &__heading {
-        position: absolute;
-        bottom: -70px;
-        left: -20px;
-        min-height: 150px;
-        font-size: 200px;
-        font-weight: 300;
-        text-transform: uppercase;
-        overflow: hidden;
-        span {
-            height: 45px;
-            display: block;
-            font-size: 64px;
-        }
-    }
 }
 .scors {
     display: flex;
@@ -144,4 +129,62 @@
     &__dec {
         margin-right: -15px;
     }
+}
+@media(max-width: 1920px) {
+    .heroes {
+        &__item {
+            padding: calcVW(50);
+        }
+        &__list {
+            height: calcVW(750);
+            border-bottom-left-radius: calcVW(200);
+        }
+        &__title {
+            font-size: calcVW(64);
+            height: calcVW(180);
+            margin-bottom: calcVW(25);
+            margin-top: calcVW(145);
+            span {
+                font-size: calcVW(96);
+            }
+        }
+        &__descr {
+            height: calcVW(110);
+            margin-bottom: calcVW(50);
+        }
+        &__button {
+            gap: calcVW(40);
+            padding: calcVW(45) 0;
+           
+        }
+        &__img {
+            height: calcVW(650);
+            border-radius: calcVW(170);
+        }
+    }
+    .scors {
+        top: calcVW(-200);
+        gap: calcVW(175);
+        right: calcVW(80);
+        &__numbers {
+            font-size: calcVW(40);
+            min-height: calcVW(70);
+        }
+        &__current {
+            font-size: calcVW(96);
+            margin-bottom: calcVW(-10);
+            width: calcVW(110);
+        }
+        &__btn {
+            width: calcVW(120);
+            height: calcVW(120);
+        }
+        &__dec {
+            margin-right: calcVW(-15);
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    
 }
