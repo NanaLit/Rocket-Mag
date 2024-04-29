@@ -49,17 +49,15 @@
         overflow: hidden;
     }
     &__button {
-        a {
-            width: 100%;
-            height: 100%;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            font-weight: 300;
-            padding: 45px 0;
-        }
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        font-weight: 300;
+        padding: 45px 0;
        
     }
     &__img {
@@ -76,15 +74,17 @@
     }
     &__heading {
         position: absolute;
-        bottom: -50px;
+        bottom: -70px;
         left: -20px;
-        min-height: 155px;
+        min-height: 150px;
         font-size: 200px;
         font-weight: 300;
         text-transform: uppercase;
         overflow: hidden;
         span {
+            height: 45px;
             display: block;
+            font-size: 64px;
         }
     }
 }
@@ -174,11 +174,8 @@
             margin-bottom: calcVW(60);
         }
         &__button {
-            a {
-                gap: calcVW(40);
-                padding: calcVW(45) 0;
-            }
-           
+            gap: calcVW(40);
+            padding: calcVW(45) 0;
         }
         &__img {
             height: calcVW(620);
@@ -188,6 +185,10 @@
             left: calcVW(-20);
             min-height: calcVW(155);
             font-size: calcVW(200);
+            span {
+                height: calcVW(45);
+                font-size: calcVW(64);
+            }
         }
     }
     .counter {
@@ -247,10 +248,8 @@
             margin-bottom: 40px;
         }
         &__button {
-            a {
-                gap: 20px;
-                padding: 24px 0;
-            }
+            gap: 20px;
+            padding: 24px 0;
            
         }
         &__img {
@@ -263,6 +262,10 @@
             left: 0;
             min-height: 50px;
             font-size: 48px;
+            span {
+                height: 20px;
+                font-size: 20px;
+            }
         }
         &__wrapper {
             width: 100%;

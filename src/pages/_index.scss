@@ -106,6 +106,44 @@
         display: none;
     }
 }
+
+.hero {
+    padding: 180px 0 0;
+    background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+    &__container {
+        width: 75%;
+    }
+    &__descr {
+        width: 20%;
+        padding-top: 100px;
+    }
+    &__subtitle {
+        display: inline-block;
+        padding: 50px 60px;
+        border: 2px solid $main;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 64px;
+        text-transform: uppercase;
+        margin-left: 56%;
+    }
+    &__title {
+        display: inline-block;
+        padding: 100px 120px;
+        border: 2px solid $main;
+        color: #ffffff;
+        font-weight: 300;
+        font-size: 300px;
+        text-transform: uppercase;
+        margin-left: 2%;
+    }
+}
 @media(max-width: 1920px) {
     .promo {
         padding: calcVW(180) 0 calcVW(100);
