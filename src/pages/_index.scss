@@ -1,3 +1,4 @@
+@import '../components/heroesSlider/heroesSlider';
 .promo {
     padding: 180px 0 100px;
     background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
@@ -101,6 +102,8 @@
     }
     &__descr {
         width: 20%;
+        height: 1850px;
+        overflow: hidden;
     }
     .button {
         display: none;
@@ -122,6 +125,8 @@
     &__descr {
         width: 20%;
         padding-top: 100px;
+        height: 950px;
+        overflow: hidden;
     }
     &__subtitle {
         display: inline-block;
@@ -196,6 +201,24 @@
             row-gap: calcVW(40);
             margin-bottom: calcVW(150);
         }
+        &__descr {
+            height: calcVW(1850);
+        }
+    }
+    .hero {
+        padding: calcVW(180) 0 0;
+        &__descr {
+            padding-top: calcVW(100);
+            height: calcVW(950);
+        }
+        &__subtitle {
+            padding: calcVW(50) calcVW(60);
+            font-size: calcVW(64);
+        }
+        &__title {
+            padding: calcVW(100) calcVW(120);
+            font-size: calcVW(300);
+        }
     }
 }
 
@@ -262,8 +285,7 @@
             width: 100%;
             top: 100px;
             left: 20px;
-            overflow: hidden;
-            width: 100%;
+            height: auto;
         }
         .button {
             display: flex;
@@ -278,6 +300,30 @@
                 margin-top: 2px;
                 margin-left: 10px;
             }
+        }
+    }
+    .hero {
+        padding: 180px 0 0;
+        position: relative;
+        &__container {
+            width: 100%;
+        }
+        &__descr {
+            padding-top: 0;
+            position: absolute;
+            width: 100%;
+            top: 100px;
+            left: 20px;
+            overflow: hidden;
+            height: auto;
+        }
+        &__subtitle {
+            padding: calcVW(50) calcVW(60);
+            font-size: calcVW(64);
+        }
+        &__title {
+            padding: calcVW(100) calcVW(120);
+            font-size: calcVW(300);
         }
     }
 }
