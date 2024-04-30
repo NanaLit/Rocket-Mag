@@ -42,7 +42,7 @@
 @media(max-width: 768px) {
     .header {
         padding: 0;
-        position: absolute;
+        position: static;
         background: transparent;
         .noise {
             display: none;
