@@ -302,8 +302,9 @@
             }
         }
     }
+
     .hero {
-        padding: 180px 0 0;
+        padding: 230px 0 0;
         position: relative;
         &__container {
             width: 100%;
@@ -318,12 +319,19 @@
             height: auto;
         }
         &__subtitle {
-            padding: calcVW(50) calcVW(60);
-            font-size: calcVW(64);
+            padding: 20px 30px;
+            font-size: 20px;
+            display: flex;
+            margin-left: calc(100% - 155px);
+            text-align: center;
+            justify-content: center;
+            width: 155px;
         }
         &__title {
-            padding: calcVW(100) calcVW(120);
-            font-size: calcVW(300);
+            padding: 20px 30px;
+            font-size: 96px;
+            width: 100%;
+            margin-left: 0;
         }
     }
 }
@@ -331,6 +339,14 @@
     .promo {
         &__line {
             height: 37%;
+        }
+    }
+    .hero {
+        &__title {
+            font-size: 80px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
         }
     }
 }
