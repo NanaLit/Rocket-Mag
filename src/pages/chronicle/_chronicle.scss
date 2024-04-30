@@ -1,55 +1,69 @@
 @import '../../scss/_vars.scss';
 @import '../../scss/_functions.scss';
-.heroes {
+
+.chronicle {
   padding: 160px 0;
   color: #fff;
   &__item {
-    margin-bottom: 100px;
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    gap: 65px;
-    border-radius: 200px;
-    border: 2px solid $main;
+    padding: 100px 0;
     &:nth-child(even) {
       background-color: #fff;
       color: #000;
-      border: none;
-      .heroes__img-box img{
-        border-color: $main;
-      }
-      .heroes__type::after {
-        background-color: #000;
-      }
-    }
-    &:nth-child(odd) {
-      position: relative;
-      &::before {
-        content: '';
-        position: absolute;
-        left: 70%;
-        bottom: 0;
-        transform: translateY(50%);
-        width: 80px;
-        height: 80px;
-        background-image: url(../img/icons/star.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
+      .chronicle__img-box {
+        transform: rotateY(180deg);
+        order: -1;
+        img {
+          transform: rotateY(180deg);
+        }
       }
     }
+ 
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content {
+    width: 44%;
+  }
+  &__swiper {
+    overflow: visible;
+    width: 50%;
   }
   &__img-box {
-    width: 100%;
-    max-width: 350px;
+    display: grid;
+    grid-template-columns: 41% 20% 9% 21%;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
     img {
+      border-radius: 20px;
+      width: 100%;
       height: 100%;
-      border-radius: 200px;
-      border: 2px solid #fff;
+      object-fit: cover;
+      &:nth-child(1),
+      &:nth-child(5) {
+        border-radius: 200px;
+        border: 2px solid $main;
+      }
+      &:nth-child(2){
+        grid-column: span 2;
+      }
+      &:nth-child(3){}
+      &:nth-child(4){
+        grid-row: span 2;
+        grid-column: span 2;
+        border: 2px solid $main;
+      }
+      &:nth-child(5){
+        grid-column: span 2;
+      }
+      &:nth-child(6){
+        grid-column: span 2;
+      }
     }
   }
-
-  &__type {
+  &__date {
     position: relative;
     margin-bottom: 30px;
     padding-bottom: 30px;
@@ -84,27 +98,12 @@
 }
 
 @media (max-width: 1920px) {
-  .heroes {
+  .chronicle {
     padding: calcVW(160) 0;
-    &__top {
-      
-    }
     &__item {
-      margin-bottom: calcVW(100);
-      padding: calcVW(50);
-      gap: calcVW(65);
-      border-radius: calcVW(200);
-      &:nth-child(odd) {
-        &:before {
-          width: calcVW(80);
-          height: calcVW(80);
-        }
-      }
+      padding: calcVW(100) 0;
     }
-    &__img-box {
-      max-width: calcVW(350);
-    }
-    &__type {
+    &__date {
       margin-bottom: calcVW(30);
       padding-bottom: calcVW(30);
       font-size: calcVW(24);
@@ -122,42 +121,42 @@
 }
 
 @media (max-width: 991px) {
-  .heroes {
-    &__type {
+  .chronicle {
+    &__date {
       font-size: 16px;
     }
   }
 }
 @media (max-width: 768px) {
-  .heroes {
-    padding-top: 40px;
-    &__img-box {
-      max-width: 160px;
+  .chronicle {
+    padding-top: 140px;
+    &:nth-child(even) {
+      .chronicle__img-box {
+        transform: rotateY(0);
+        img {
+          transform: rotateY(0);
+        }
+      }
     }
-  }
-}
-@media (max-width: 576px) {
-  .heroes {
-    &__item {
-      padding: 0 10px;
+    &__inner {
       flex-direction: column;
+    }
+    &__content {
+      width: 100%;
       text-align: center;
-      &:nth-child(odd):before {
-        display: none;
-      }
+    }
+    &__swiper {
+      margin-bottom: 20px;
+      order: -1;
     }
     &__img-box {
-      margin-top: -5px;
-      max-width: 100%;
-      max-height: 300px;
-      aspect-ratio: 1;
-      img{
-        width: 100%;
-        object-fit: cover;
-        border-radius: 25px;
+      display: flex;
+      img.swiper-slide {
+        border-radius: 20px;
+        border: 2px solid $main;
       }
     }
-    &__type {
+    &__date {
       margin-bottom: 20px;
       padding-bottom: 20px;
       &::after {
@@ -181,6 +180,13 @@
     }
     &__btn {
       max-width: 100%;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .chronicle {
+    &__item {
+      padding: 40px 0;
     }
   }
 }
