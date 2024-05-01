@@ -1,0 +1,30 @@
+.article-hero {
+  &__preview {
+    color: #fff;
+  }
+  &__prev-inner {
+    display: flex;
+  }
+  &__left {
+    width: 45%;
+  }
+  &__right {
+    display: flex;
+    width: 50%;
+  }
+  &__top-video {
+    width: 45%;
+    video {
+      width: 100%;
+    }
+  }
+  &__side {
+    width: 45%;
+    p {
+      border-color: #fff !important;
+    }
+  }
+  &__main {
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,178 @@
+.footer {
+  padding-bottom: 100px;
+  color: #fff;
+  &__title {
+    margin-top: 150px;
+    font-size: 185px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__contacts {
+    margin-bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__contact {
+    width: 30%;
+    font-size: 32px;
+    &:last-child {
+      text-align: right;
+    }
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    a svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  &__managers {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__manager {
+    width: auto;
+  }
+  &__name {
+    margin-bottom: 20px;
+    font-size: 48px;
+  }
+  &__post {
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    font-size: 24px;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 1px;
+      background-color: #fff;
+    }
+  }
+  &__manager-contact {
+    display: block;
+    margin-bottom: 20px;
+  }
+  &__manager-social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    a svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+@media (max-width: 1920px) {
+  .footer {
+    padding-bottom: calcVW(100);
+    &__title {
+      margin-top: calcVW(150);
+      font-size: calcVW(185);
+    }
+    &__contacts {
+      margin-bottom: calcVW(70);
+    }
+    &__contact {
+      font-size: calcVW(32);
+    }
+    &__social {
+      a svg {
+        width: calcVW(60);
+        height: calcVW(60);
+      }
+    }
+    &__name {
+      font-size: calcVW(48);
+    }
+    &__post {
+      margin-bottom: calcVW(25);
+      padding-bottom: calcVW(25);
+      font-size: calcVW(24);
+    }
+    &__manager-social {
+      a svg {
+        width: calcVW(40);
+        height: calcVW(40);
+      }
+    }
+  }
+}
+@media (max-width: 1280px) {
+  .footer {
+    &__social {
+      a svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &__manager-social {
+      a svg {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .footer {
+    &__contact {
+      font-size: 16px;
+    }
+    &__name {
+      font-size: 26px;
+    }
+    &__post {
+      font-size: 16px;
+    }
+    &__manager-contact {
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    &__contacts {
+      flex-direction: column;
+      gap: 40px;
+      align-items: start;
+    }
+    &__social {
+      order: 1;
+      a svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    &__contact{
+      width: auto;
+      &:last-child {
+        text-align: left;
+      }
+    }
+    &__slider {
+      margin: 0 -20px;
+      padding: 0 20px;
+    }
+    &__manager {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 30px 20px 20px;
+      border-radius: 20px;
+      border: 2px solid $main;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .footer {
+
+  }
+}

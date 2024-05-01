@@ -36,5 +36,22 @@ window.addEventListener("DOMContentLoaded", () => {
   //   send('#form', 'input[name="name"]', 'input[name="phone"]', 'input[name="email"]', "/mailer/mail-footer.php");
 
   // }
-    menu();
+  menu();
+  
+  const footerSlider = new Swiper('.footer__slider', {
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 20
+    },
+    576: {
+      slidesPerView: 2.2,
+      spaceBetween: 40
+    },
+    768: {
+      slidesPerView: 'auto',
+    }
+  }
+  });
 });
