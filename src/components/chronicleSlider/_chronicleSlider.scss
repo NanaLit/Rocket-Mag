@@ -62,17 +62,41 @@
        
     }
     &__img {
-        margin-left: 2%;
-        width: 98%;
-        height: 620px;
+        display: grid;
+        grid-template-columns: 41% 20% 9% 21%;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 20px;
+      
+
+    }
+    &__image {
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(.8);
+      //   object-fit: cover;
+      //   filter: brightness(.8);
+          &:nth-child(1),
+          &:nth-child(5) {
+          border-radius: 200px;
+          border: 2px solid $main;
+          }
+          &:nth-child(2){
+          grid-column: span 2;
+          }
+          &:nth-child(4){
+          grid-row: span 2;
+          grid-column: span 2;
+          border: 2px solid $main;
+          }
+          &:nth-child(5){
+          grid-column: span 2;
+          }
+          &:nth-child(6){
+          grid-column: span 2;
         }
     }
+      
     &__heading {
         position: absolute;
         bottom: -70px;
@@ -210,14 +234,18 @@
 
 @media(max-width: 768px) {
     .chronic {
-        padding: 10px 0;
+        padding: 0 0;
+        margin-top: -2px;
         &__list {
             position: relative;
-            height: 800px;
+            height: 900px;
         }
         &__item {
             flex-direction: column-reverse;
-            gap: 40px;
+            gap: 20px;
+            border: 2px solid $main;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
         }
         &__right {
             width: 100%;
@@ -226,6 +254,7 @@
             font-size: 24px;
             min-height: 60px;
             margin-bottom: 20px;
+            text-align: center;
         }
         &__left {
             width: 100%;
@@ -233,15 +262,17 @@
         &__descr {
             height: 60px;
             margin-bottom: 40px;
+            text-align: center;
         }
         &__button {
             gap: 20px;
             padding: 24px 0;
-           
+            min-width: 100%;
         }
         &__img {
-            margin-left: 0;
-            width: calc(100% - 10px);
+            margin-left: 10px;
+            margin-top: 10px;
+            width: calc(100% - 60px);
             height: auto;
         }
         &__heading {
@@ -293,14 +324,14 @@
 @media(max-width: 576px) {
     .chronic {
         &__list {
-            height: 700px;
+            height: 800px;
         }
     }
 }
 @media(max-width: 370px) {
     .chronic {
         &__list {
-            height: 620px;
+            height: 680px;
         }
     }
     .numeric {
