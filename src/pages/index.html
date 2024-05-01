@@ -5,7 +5,7 @@
 	})
 
 <body>
-	@include('./../components/header/_header.html')
+	<!-- @include('./../components/header/_header.html')
 	<section class="promo">
 		<div class="container">
 			<h1 class="promo__title title">rocket mag 2024</h1>
@@ -130,7 +130,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> 
 	<section class="hero">
 		<div class="container">
 			<p class="hero__subtitle">ПЕчатное <br>
@@ -179,8 +179,63 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
+	<section class="video">
+		<div class="container">
+			<h2 class="video__title">видео</h2>
+			<div class="video__wrapper">
+				<div class="video__descr">
+					<sidebar class="side side--white">
+						<p>
+							<img src="/img/news/rocket.svg" alt="star">
+							<span>видео видео видео</span></p>
+						<p><span>видео видео </span>
+							<img src="/img/news/pause.svg" alt="pause">
+							<span>видео видео</span>
+							<img src="/img/news/play.svg" alt="play">
+						</p>
+						<p>
+							<img src="/img/news/play.svg" alt="paly">
+							<span>видео видео видео</span>				
+						</p>
+					</sidebar>
+				</div>
+				<div class="video__container">
+					<ul class="video__list">
+						@include('./../components/videoCard/_videoCard.html', {
+							"title": "главное Название новости",
+							"descr": "описание новости"
+						})
+						@include('./../components/videoCard/_videoCard.html', {
+							"title": "главное Название новости",
+							"descr": "описание новости"
+						})
+						@include('./../components/videoCard/_videoCard.html', {
+							"title": "главное Название новости",
+							"descr": "описание новости"
+						})
+						@include('./../components/videoCard/_videoCard.html', {
+							"title": "главное Название новости",
+							"descr": "описание новости"
+						})
+						@include('./../components/videoCard/_videoCard.html', {
+							"title": "главное Название новости",
+							"descr": "описание новости"
+						})
+						@include('./../components/videoCard/_videoCard.html', {
+							"title": "главное Название новости",
+							"descr": "описание новости"
+						})
+					</ul>
+					<button class="button"><a href="/videos">Все видео<svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10.8301 0.344721L16.9706 6.48528M16.9706 6.48528L10.8301 12.6258M16.9706 6.48528L9.49762e-05 6.48526" stroke="white"/>
+						</svg>
+						</a></button>
+				</div>
+			</div>
+		</div>
+	</section>
 	<script src="/js/libs/gsap.min.js"></script> 
 	<!-- <script src="/js/libs/swiper-bundle.min.js"></script>
 	<script src="/js/libs/ScrollTrigger.min.js"></script>

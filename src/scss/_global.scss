@@ -243,11 +243,13 @@ body {
       font-weight: 250;
       font-size: 96px;
       writing-mode: vertical-rl;
+      white-space: nowrap;
     }
-    svg {
+    img {
         display: block;
         width: 80px;
         height: 80px;
+        object-fit: contain;
     }
     &:first-of-type {
       padding-top: 60%;
@@ -258,6 +260,15 @@ body {
     &:nth-of-type(2) {
       border-right: 1px solid #000000;
       border-left: 1px solid #000000;
+    }
+  }
+  &--white {
+    p {
+      color: #ffffff;
+      &:nth-of-type(2) {
+        border-right: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+      }
     }
   }
 }
@@ -301,7 +312,7 @@ body {
       span {
         font-size: calcVW(96);
       }
-      svg {
+      img {
         width: calcVW(80);
         height: calcVW(80);
       }
@@ -345,7 +356,7 @@ body {
         font-size: 30px;
         writing-mode: horizontal-tb;
       }
-      svg {
+      img {
         width: 24px;
         height: 24px;
       }
@@ -365,6 +376,14 @@ body {
         border-right: none;
         border-left: none;
         order: 2;
+      }
+    }
+    &--white {
+      p {
+        &:nth-of-type(2) {
+          border-top: 1px solid #ffffff;
+          border-bottom: 1px solid #ffffff;
+        }
       }
     }
   }

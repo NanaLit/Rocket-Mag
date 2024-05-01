@@ -229,7 +229,7 @@
         &__wrapper {
             width: calc(100% + 40px);
             position: absolute;
-            bottom: -85px;
+            bottom: -80px;
             left: -20px;
         }
         &__button {
@@ -237,6 +237,7 @@
             font-size: 20px;
             padding: 24px 0;
             margin-top: auto;
+            max-width: 100%;
         }
     }
     .scors {
