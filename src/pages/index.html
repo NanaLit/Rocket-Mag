@@ -5,7 +5,7 @@
 	})
 
 <body>
-	<!-- @include('./../components/header/_header.html')
+	@include('./../components/header/_header.html')
 	<section class="promo">
 		<div class="container">
 			<h1 class="promo__title title">rocket mag 2024</h1>
@@ -130,7 +130,7 @@
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 	<section class="hero">
 		<div class="container">
 			<p class="hero__subtitle">ПЕчатное <br>
@@ -155,6 +155,31 @@
 			</div>
 		</div>
 	</section>
+
+	<div class="chronicle">
+		<div class="noise"></div>
+		<div class="container">
+			<p class="chronicle__subtitle">светская</p>
+			<h2 class="chronicle__title">хроника</h2>
+			<div class="chronicle__wrapper">
+				<div class="chronicle__container">
+					@include('./../components/chronicleSlider/_chronicleSlider.html')
+				</div>
+				<div class="chronicle__descr">
+					<sidebar class="side">
+						<p><span>светская хроника</span></p>
+						<p><span>светская</span>
+							<img src="/img/news/rocket.svg" alt="star">
+							<span>хроника светская хроника светская</span></p>
+						<p>
+							<img src="/img/news/star.svg" alt="star">
+							<span>светская хроника</span>				
+						</p>
+					</sidebar>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<script src="/js/libs/gsap.min.js"></script> 
 	<!-- <script src="/js/libs/swiper-bundle.min.js"></script>
