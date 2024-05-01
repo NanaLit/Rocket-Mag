@@ -1,4 +1,6 @@
 @import '../components/heroesSlider/heroesSlider';
+@import '../components/chronicleSlider/chronicleSlider';
+
 .promo {
     padding: 180px 0 100px;
     background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
@@ -147,6 +149,44 @@
         font-size: 300px;
         text-transform: uppercase;
         margin-left: 2%;
+    }
+}
+
+.chronicle {
+    padding: 200px 0 0;
+    background-color: #ffffff;
+    position: relative;
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        padding-top: 100px;
+    }
+    &__container {
+        width: 75%;
+    }
+    &__descr {
+        width: 20%;
+        height: 1100px;
+        overflow: hidden;
+    }
+    &__subtitle {
+        display: inline-block;
+        padding: 50px 60px;
+        border: 2px solid $main;
+        font-weight: 500;
+        font-size: 64px;
+        text-transform: uppercase;
+    }
+    &__title {
+        display: inline-block;
+        padding: 100px 120px;
+        border: 2px solid $main;
+        font-weight: 300;
+        font-size: 300px;
+        text-transform: uppercase;
+        margin-left: 5%;
     }
 }
 @media(max-width: 1920px) {
