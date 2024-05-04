@@ -37,10 +37,11 @@
             </div>
           </div>
           <div class="article-hero__right">
-            <div class="article-hero__top-video">
-              <video src="https://videocdn.cdnpk.net/joy/content/video/free/video0458/large_preview/_import_60c05c965f75c2.75300775.mp4?filename=1104901_1080p_purchase_apartment_1920x1080.mp4"></video>
+            <div class="article-hero__top-video border-offset">
+              <img class="article-hero__poster" src="/img/heroes/gazmanov/1.jpg" alt="">
+              <img class="video-card__play" src="/img/video/play.svg" alt="play">
             </div>
-            <sidebar class="article-hero__side side">
+            <sidebar class="article-hero__side side side--white">
               <p>
                 <img src="/img/news/star.svg" alt="star">
                 <span>Печатное интервью</span>
@@ -67,15 +68,39 @@
         </div>
       </div>
     </section>
-    <section class="article-hero__main">
+    <section class="article-hero__main article-main">
       <div class="container">
-        <p class="question"></p>
-        <p class="text"></p>
-        <img src="" alt="">
-        <p class="quote"></p>
+        <div class="article-main__inner">
+          <div class="article-main__content">
+            <p class="question">Здравствуйте, Александра. Не могли бы Вы для начала рассказать нашим читателям, с чего началось Ваше увлечение фотографией?</p>
+            <div class="text">
+              <p>Добрый день. Это произошло, когда я училась на 1-ом курсе. Мне тогда пришла в голову идея  создать выпускной альбом или диск с фотографиями за все 5 лет обучения. С того дня я начала снимать почти постоянно – на телефон, на фотоаппарат, и неожиданно поняла, что мне это нравится. Я радовалась каждому удачному или смешному снимку, предвкушала саму работу по созданию альбома.</p>
+            </div>
+            <div class="img-box border-offset">
+              <img src="/img/promo/first.jpg" alt="">
+            </div>
+            <blockquote class="quote">
+              <p>“Я всегда страдала от низкой самооценки: например, я никогда не считала себя красивой. Женщина притягивает мужчин, когда она себя любит. Сейчас я работаю над собой в этом смысле.”</p>
+            </blockquote>
+            <p class="question">Что Вы чувствуете, когда держите в руках фотоаппарат?</p>
+            <div class="text">
+              <p>Я словно отдыхаю душой. Иногда, чтобы отвлечься от проблем, мне достаточно взять фотоаппарат и пойти на прогулку. Приятная тяжесть в руках, щелчки затвора, интересные снимки – и хорошее настроение возвращается.</p>
+            </div>
+
+            <div class="article-main__author">
+              Александра Кожевникова
+            </div>
+          </div>
+          <aside class="article-main__adv">
+
+          </aside>
+        </div>
+      
       </div>
     </section>
   </article>
+
+  @include('./../../components/article-btns/_article-btns.html')
 
 
 
