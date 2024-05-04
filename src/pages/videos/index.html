@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+	@include('./../../components/head/_head.html', {
+	"title": "ROCKET MAG",
+	"filecss": "videos"
+	})
+
+<body>
+
+  @include('./../../components/header/_header.html')
+
+  <div class="videos">
+    <div class="videos__top">
+      <div class="container">
+        <h1 class="videos__title-h1 videos__title">
+          видео<span>/ video</span>
+        </h1>
+      </div>
+    </div>
+   
+      <div class="tabs swiper">
+        <ul class="tabs__list swiper-wrapper">
+          <li class="tabs__item  tabs__item--active swiper-slide" style="margin: 0 0 0 0 !important">Черное / Белое</li>
+          <li class="tabs__item  swiper-slide" style="margin: 0 0 0 0 !important">День со звездой</li>
+        </ul>
+        </div>
+        <div class="container container--vid">
+          <div class="videos__container videos__container--active">
+            <ul class="videos__list">
+              @include('./../../components/videoCard/_videoCard.html', {
+                  "title": "главное Название новости",
+                  "descr": "описание новости"
+              })
+              @include('./../../components/videoCard/_videoCard.html', {
+                  "title": "главное Название новости",
+                  "descr": "описание новости"
+              })
+              @include('./../../components/videoCard/_videoCard.html', {
+                  "title": "главное Название новости",
+                  "descr": "описание новости"
+              })
+              @include('./../../components/videoCard/_videoCard.html', {
+                  "title": "главное Название новости",
+                  "descr": "описание новости"
+              })
+              @include('./../../components/videoCard/_videoCard.html', {
+                  "title": "главное Название новости",
+                  "descr": "описание новости"
+              })
+              @include('./../../components/videoCard/_videoCard.html', {
+                  "title": "главное Название новости",
+                  "descr": "описание новости"
+              })
+            </ul>
+            <button class="videos__btn button button--white">
+              Загрузить еще
+            </button>
+          </div>
+          <div class="videos__container">
+            <ul class="videos__list">
+              @include('./../../components/videoCard/_videoCard.html', {
+                  "title": "главное Название новости",
+                  "descr": "описание новости"
+              })
+              @include('./../../components/videoCard/_videoCard.html', {
+                  "title": "главное Название новости",
+                  "descr": "описание новости"
+              })
+              
+            </ul>
+            <button class="videos__btn button button--white">
+              Загрузить еще
+            </button>
+          </div>
+        </div>
+  </div>
+
+  <script src="/js/libs/swiper-bundle.min.js"></script>
+	<script src="/js/libs/gsap.min.js"></script> 
+	<script src="/js/main.bundle.js"></script>
+	<script src="/js/index.bundle.js"></script>
+
+</body>
+
+</html>
