@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+	@include('./../../components/head/_head.html', {
+	"title": "ROCKET MAG",
+	"filecss": "hero-page"
+	})
+
+<body>
+
+  @include('./../../components/header/_header.html')
+
+  <div class="article-top">
+    <div class="container">
+      <div class="article-top__inner">
+        <a class="article-top__back">
+          <svg width="88" height="64" viewBox="0 0 88 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32.183 63.2719L1.00046 32.0893M1.00046 32.0893L32.183 0.906754M1.00046 32.0893L87.1791 32.0895" stroke="white"/>
+          </svg>
+          </a>
+        <div class="article-top__title">Герои / Heroes</div>
+      </div>
+    </div>
+  </div>
+
+  <article class="article-hero">
+    <section class="article-hero__preview">
+      <div class="container">
+        <div class="article-hero__prev-inner">
+          <div class="article-hero__left">
+            <div class="article-date">Печатное интервью</div>
+            <h1 class="article-title">алексей
+              Газманов</h1>
+            <div class="article-subtitle">“я пел для родины”</div>
+            <div class="article-descr">
+              <p>
+                Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях...
+              </p>
+            </div>
+          </div>
+          <div class="article-hero__right">
+            <div class="article-hero__top-video">
+              <video src="https://videocdn.cdnpk.net/joy/content/video/free/video0458/large_preview/_import_60c05c965f75c2.75300775.mp4?filename=1104901_1080p_purchase_apartment_1920x1080.mp4"></video>
+            </div>
+            <sidebar class="article-hero__side side">
+              <p>
+                <img src="/img/news/star.svg" alt="star">
+                <span>Печатное интервью</span>
+              </p>
+              <p>
+                <span>Печатное интервью</span>
+              </p>
+              <p>
+                <span>интервью</span>
+                <img src="/img/news/rocket.svg" alt="star">
+                <span>ПЕчатное интервью</span>
+              </p>
+              <p>
+                <img src="/img/news/star.svg" alt="star">
+                <span>Печатное интервью</span>
+              </p>
+              <p>
+                <span>интервью</span>
+                <img src="/img/news/rocket.svg" alt="star">
+                <span>Печатное</span>
+              </p>
+            </sidebar>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="article-hero__main">
+      <div class="container">
+        <p class="question"></p>
+        <p class="text"></p>
+        <img src="" alt="">
+        <p class="quote"></p>
+      </div>
+    </section>
+  </article>
+
+
+
+
+  @include('./../../components/footer/_footer.html')
+	<script src="/js/main.bundle.js"></script>
+
+</body>
+
+</html>

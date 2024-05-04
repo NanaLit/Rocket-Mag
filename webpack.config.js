@@ -5,7 +5,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const config = {
     entry: {
         main: "./src/js/main.js",
-        index: "./src/js/index.js"
+        index: "./src/js/index.js",
+        chronicle: "./src/js/chronicle.js",
     },
     mode: 'development',
     output: {
