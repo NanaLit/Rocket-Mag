@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
             updateOnWindowResize: true,
             observeParents: true,
             speed: 2000,
-            spaceBetween: 0,
+            spaceBetween: "4%",
             mousewheel: {
                 forceToAxis: true
             },
@@ -74,6 +74,43 @@ window.addEventListener("DOMContentLoaded", () => {
                 },
             }
         });
+
+        const tabs = document.querySelectorAll('.tabs__item');
+        const contentWrappers = document.querySelectorAll('.videos__container')
+        const tlToggleContent = gsap.timeline({
+            defaults: {
+                duration: .5,
+                ease: 'power1.out'
+            }
+        })
+
+        tlToggleContent.to(contentWrappers[0], {x: 0},"<0%")
+                        .to(contentWrappers[1], {x: '200%'},"<0%")
+        tabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(tab => {
+                    tab.classList.remove('tabs__item--active')
+                })
+                tab.classList.add('tabs__item--active')
+                const tlToggleContent = gsap.timeline({
+                    defaults: {
+                        duration: .5,
+                        ease: 'power1.out',
+                        top: 0
+                    }
+                })
+                if(i===0) {
+                    tlToggleContent.to(contentWrappers[0], {x: 0})
+                                    .to(contentWrappers[1], {x: '200%'},"<0%")
+                } else {
+                    tlToggleContent.to(contentWrappers[0], {x: '-200%'})
+                                    .to(contentWrappers[1], {x: 0,},"<0%")
+                }
+            })
+            
+        })
+
+        
     }
     
 })

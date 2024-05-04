@@ -7,6 +7,10 @@
     .video-card {
         width: 32%;
     }
+    .container {
+        overflow: hidden;
+        position: relative;
+    }
     &__title {
         font-size: 185px;
         position: relative;
@@ -26,32 +30,38 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: start;
+        column-gap: 30px;
         row-gap: 50px;
+    }
+    &__container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        &--active {
+            position: static;
+        }
     }
     .divider {
         margin-top: 120px;
         margin-bottom: 100px;
     }
     .tabs {
-        width: 100%;
         margin-bottom: 100px;
-        padding-left: calc((100vw - 1840px) / 2);
-
-        &__list {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-self: start;
-            gap: 50px;
-
-        }
+        padding-left: calc((100vw - 1640px) / 2);
         &__item {
             background-color: transparent;
             border: 1px solid $main;
-            transition: all 0.5s ease-in-out;
+            transition: background-color 0.5s ease-in-out;
             cursor: pointer;
             box-sizing: border-box;
+            padding: 40px 15px;
+            font-size: 28px;
+            text-align: center;
+            border-radius: 120px;
+            color: #FFF;
+            outline: none;
+            cursor: pointer;
             &--active {
                 background-color: $main;
             }
@@ -77,6 +87,9 @@
             }
     
         }
+        &__list {
+            column-gap: calcVW(30)
+        }
         &__btn {
             margin: calcVW(100) auto 0;
           }
@@ -87,10 +100,11 @@
         .tabs {
             margin-bottom: calcVW(100);
             padding-left: calcVW(140);
-            &__list {
-                gap: calcVW(50);
+            &__item {
+                padding: calcVW(40) calcVW(15);
+                font-size: calcVW(28);
+                border-radius: calcVW(120);
             }
-            
         }
     }
    
@@ -107,7 +121,9 @@
             span {
                 font-size: 16px;
             }
-    
+        }
+        &__list {
+            column-gap: 10px;
         }
         &__btn {
             margin: 30px auto 0;
@@ -119,13 +135,11 @@
         .tabs {
             margin-bottom: 30px;
             padding-left: 20px;
-            &__list.swiper-wrapper {
-                gap: 10px;
-                padding-right: 15%;
-            }
-            &__item.swiper-slide {
-                // max-width: calc(100% - 70px);
-                // width: calc(100% - 70px);
+            padding-right: 10%;
+            &__item {
+                padding: 21px 10px;
+                font-size: 16px;
+                border-radius: 60px;
             }
         }
     }
