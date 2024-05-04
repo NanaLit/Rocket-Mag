@@ -23,8 +23,9 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: start;
         row-gap: 50px;
+        column-gap: 30px;
     }
     .slider__heading {
         display: none;
@@ -71,6 +72,10 @@
             }
     
         }
+        &__list {
+            column-gap: calcVW(30);
+
+        }
         &__btn {
             margin: calcVW(100) auto 0;
           }
@@ -102,6 +107,9 @@
         }
         &__btn {
             margin: 30px auto 0;
+          }
+          &__list {
+            column-gap: 10px
           }
         .divider {
             margin-top: 30px;
