@@ -34,13 +34,12 @@
         column-gap: 30px;
         row-gap: 50px;
     }
+    .container--vid {
+        display: block;
+    }
     &__container {
-        position: absolute;
-        top: 0;
         width: 100%;
-        &--active {
-            position: static;
-        }
+        opacity: 0;
     }
     .divider {
         margin-top: 120px;

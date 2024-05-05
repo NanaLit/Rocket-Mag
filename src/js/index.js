@@ -84,9 +84,12 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         })
 
-        tlToggleContent.to(contentWrappers[0], {x: 0},"<0%")
-                        .to(contentWrappers[1], {x: '200%'},"<0%")
-        tabs.forEach((tab, i) => {
+        tlToggleContent.to(contentWrappers[0], {display: 'block',})
+                        .to(contentWrappers[0], {opacity: 1})
+                        .to(contentWrappers[1], {opacity: 0})
+                        .to(contentWrappers[1], {display: "none"})
+
+        const changeContent = (tab, i) => {
             tab.addEventListener('click', () => {
                 tabs.forEach(tab => {
                     tab.classList.remove('tabs__item--active')
@@ -100,17 +103,72 @@ window.addEventListener("DOMContentLoaded", () => {
                     }
                 })
                 if(i===0) {
-                    tlToggleContent.to(contentWrappers[0], {x: 0})
-                                    .to(contentWrappers[1], {x: '200%'},"<0%")
+                    tlToggleContent.to(contentWrappers[1], {opacity: 0})
+                                    .to(contentWrappers[0], {display: 'block', duration: .1})  
+                                    .to(contentWrappers[1], {display: "none", duration: .1})
+                                    .to(contentWrappers[0], {opacity: 1})
+                                    
                 } else {
-                    tlToggleContent.to(contentWrappers[0], {x: '-200%'})
-                                    .to(contentWrappers[1], {x: 0,},"<0%")
+                    tlToggleContent.to(contentWrappers[0], {opacity: 0})
+                                    .to(contentWrappers[1], {display: 'block',duration: .1})
+                                    .to(contentWrappers[0], {display: "none", duration: .1})
+                                    .to(contentWrappers[1], {opacity: 1})
+                                   
                 }
             })
-            
-        })
+        }
+                        
+        if(window.innerWidth >= 768) {
+            tabs.forEach((tab, i) => {
+                changeContent(tab, i)
+            })
+        }  else {
+           
+            tabSlider.on('slideChange', () => {
+                tabs.forEach(tab => {
+                    tab.classList.remove('tabs__item--active')
+                })
+                const index = tabSlider.activeIndex;
+                const tlToggleContent = gsap.timeline({
+                    defaults: {
+                        duration: .5,
+                        ease: 'power1.out',
+                        top: 0
+                    }
+                })
+                if(index===0) {
+                    tlToggleContent.to(contentWrappers[1], {opacity: 0})
+                                    .to(contentWrappers[0], {display: 'block', duration: .1})  
+                                    .to(contentWrappers[1], {display: "none", duration: .1})
+                                    .to(contentWrappers[0], {opacity: 1})
+                                    
+                } else {
+                    tlToggleContent.to(contentWrappers[0], {opacity: 0})
+                                    .to(contentWrappers[1], {display: 'block',duration: .1})
+                                    .to(contentWrappers[0], {display: "none", duration: .1})
+                                    .to(contentWrappers[1], {opacity: 1})
+                                   
+                }
+            })
+        } 
+        
 
         
     }
-    
+    if(document.querySelector('.article-main__slider')) {
+        const pageSlider = new Swiper(".article-main__slider", {
+            observer: true,
+            observeSlideChildren: true,
+            updateOnWindowResize: true,
+            touchStartPreventDefault: false,
+            updateOnWindowResize: true,
+            observeParents: true,
+            speed: 600,
+            spaceBetween: "4%",
+            slidesPerView: 1,
+            mousewheel: {
+                forceToAxis: true
+            },
+        });
+    }
 })

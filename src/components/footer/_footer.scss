@@ -68,7 +68,11 @@
       width: 40px;
       height: 40px;
     }
+    &__slider {
+      margin-top: 100px;
+    }
   }
+
 }
 
 @media (max-width: 1920px) {
@@ -104,8 +108,12 @@
         height: calcVW(40);
       }
     }
+    &__slider {
+      margin-top: calcVW(100);
+    }
   }
-}
+  }
+ 
 @media (max-width: 1280px) {
   .footer {
     &__social {
@@ -168,6 +176,9 @@
       padding: 30px 20px 20px;
       border-radius: 20px;
       border: 2px solid $main;
+    }
+    &__slider {
+      margin-top: 40px;
     }
   }
 }
