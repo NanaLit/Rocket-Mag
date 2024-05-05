@@ -6,12 +6,12 @@
 
 <body>
 
-  @include('./../../components/header/_header.html')
+  @include('./../../components/header/_header-page.html')
 
   <div class="article-top">
     <div class="container">
       <div class="article-top__inner">
-        <a class="article-top__back">
+        <a href="/heroes/" class="article-top__back">
           <svg width="88" height="64" viewBox="0 0 88 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M32.183 63.2719L1.00046 32.0893M1.00046 32.0893L32.183 0.906754M1.00046 32.0893L87.1791 32.0895" stroke="white"/>
           </svg>
@@ -19,6 +19,9 @@
         <div class="article-top__title">Герои / Heroes</div>
       </div>
     </div>
+  </div>
+  <div class="divider divider--right divider--mobile">
+    <span></span>
   </div>
 
   <article class="article-hero">
@@ -38,8 +41,17 @@
           </div>
           <div class="article-hero__right">
             <div class="article-hero__top-video border-offset">
-              <img class="article-hero__poster" src="/img/heroes/gazmanov/1.jpg" alt="">
+              <img class="article-hero__poster" src="/img/heroes/gazmanov/poster.jpg" alt="">
               <img class="video-card__play" src="/img/video/play.svg" alt="play">
+              <dialog class="video-card__wrapper">
+                <div class="video-card__inner">
+                    <video src="https://videocdn.cdnpk.net/joy/content/video/free/video0485/large_preview/_import_61bac8f869af98.55664078.mp4?filename=1118632_4k_pattern_texture_3840x2160.mp4" controls>
+                    </video>
+                   
+                    <a href="#" class="video-card__title video-card__title--wr">Название новости</a>
+                    <p class="video-card__descr video-card__descr--wr">щписание</p>
+                </div>
+              </dialog>
             </div>
             <sidebar class="article-hero__side side side--white">
               <p>
@@ -106,7 +118,10 @@
 
 
   @include('./../../components/footer/_footer.html')
+  <script src="/js/libs/swiper-bundle.min.js"></script>
 	<script src="/js/main.bundle.js"></script>
+	<script src="/js/index.bundle.js"></script>
+
 
 </body>
 

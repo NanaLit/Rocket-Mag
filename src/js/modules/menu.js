@@ -20,5 +20,16 @@ const menu = () => {
                         .to('.header__burger span:nth-child(1)', { width: 24}, '<')
         }
     })
+
+    const pathname = window.location.pathname
+    const linksItems = document.querySelectorAll('.header__item')
+
+    linksItems.forEach(item => {
+        item.classList.remove('header__item--active')
+        console.log(item.querySelector('a').getAttribute('href'))
+        if(item.querySelector('a').getAttribute('href') === pathname) {
+            item.classList.add('header__item--active')
+        }
+    })
 }
 module.exports = menu;
