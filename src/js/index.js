@@ -156,6 +156,28 @@ window.addEventListener("DOMContentLoaded", () => {
         
     }
     if(document.querySelector('.article-main__slider')) {
+        const slides = document.querySelectorAll('.article-main__slider-item')
+        const buttons = document.querySelectorAll('.article-counter__btn')
+        const total = document.querySelector('.article-counter__total');
+        const current = document.querySelector('.article-counter__current')
+        function getTotalZero() {
+            if (slides.length < 10) {
+                total.textContent =  `0${slides.length}`;
+            } else {
+                total.textContent =  slides.length;
+            }
+        }
+        getTotalZero();
+        let slideIndex = 0;
+        function getCurrentZero(slideIndex = 0) {
+       
+            if (slides.length < 10) {
+                current.textContent = `0${+slideIndex + 1}`;
+            } else {
+                current.textContent =  +slideIndex + 1;
+            }
+        }
+        getCurrentZero();
         const pageSlider = new Swiper(".article-main__slider", {
             observer: true,
             observeSlideChildren: true,
@@ -169,6 +191,20 @@ window.addEventListener("DOMContentLoaded", () => {
             mousewheel: {
                 forceToAxis: true
             },
+            navigation: {
+                nextEl: '.article-counter__inc',
+                prevEl: '.article-counter__dec',
+              },
         });
+        pageSlider.on('slideChange', () => {
+            let slideIndex = pageSlider.activeIndex;
+            buttons.forEach(button => {
+                button.classList.add('article-counter__btn--active')
+                if(button.classList.contains('swiper-button-disabled')) {
+                    button.classList.remove('article-counter__btn--active')
+                } 
+            })
+            getCurrentZero(slideIndex);
+        })
     }
 })

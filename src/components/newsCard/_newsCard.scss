@@ -139,7 +139,7 @@
         }
 
         &__img {
-            height: 125px;
+            height: 250px;
         }
         &__hot {
             right: 10px;
@@ -185,6 +185,6 @@
 }
 @media(max-width: 576px) {
     .card {
-        width: 48%;
+        width: 100%;
     }
 }
