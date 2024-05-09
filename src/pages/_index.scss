@@ -1,8 +1,82 @@
 @import '../components/heroesSlider/heroesSlider';
 @import '../components/chronicleSlider/chronicleSlider';
 
+.runline {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%) rotate(-3deg);
+  z-index: 2;
+  width: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  &__inner {
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  span {
+    display: inline-block;
+    font-size: calcVW(128);
+    &:nth-child(1) {
+      animation: run1 20s infinite -10s linear;
+    }
+    &:nth-child(2) {
+      padding-left: 5px;
+      animation: run2 20s infinite linear;
+    }
+  }
+  svg {
+    width: calcVW(90);
+    height: calcVW(90);
+  }
+  &--ltr {
+    transform: translateY(50%) rotate(3deg);
+    span {
+      &:nth-child(1) {
+        animation: run1 20s infinite -10s reverse linear;
+      }
+      &:nth-child(2) {
+        animation: run2 20s infinite reverse linear;
+      }
+    }
+  }
+  &--bg-violet {
+    background-color: $main;
+    span {
+      color: #fff;
+    }
+    svg path {
+      fill: #fff;
+    }
+  }
+  &--violet {
+    span {
+      color: $main;
+    }
+    svg path {
+      fill: $main;
+    }
+  }
+}
+
+@keyframes run1 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes run2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
 
 .promo {
+    position: relative;
     padding: 180px 0 100px;
     background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
     &__title {
@@ -114,6 +188,7 @@
 }
 
 .hero {
+    position: relative;
     padding: 180px 0 0;
     background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
     &__wrapper {
@@ -343,7 +418,7 @@
 
 @media(max-width: 768px) {
     .promo {
-        padding: 140px 0 0;
+        padding: 140px 0 60px;
         &__line {
             width: calc(100vw - 17px);
             height: 47%;
@@ -391,7 +466,7 @@
         }
     }
     .news {
-        padding: 220px 0 0;
+        padding: 220px 0 30px;
         &__list {
             row-gap: 30px;
             margin-bottom: 20px;
@@ -424,7 +499,7 @@
     }
 
     .hero {
-        padding: 230px 0 0;
+        padding: 230px 0 30px;
         position: relative;
         &__container {
             width: 100%;
@@ -455,7 +530,7 @@
         }
     }
     .chronicle {
-        padding: 220px 0 0;
+        padding: 220px 0 30px;
         &__subtitle {
             padding: 20px 30px;
             font-size: 20px;
@@ -532,7 +607,17 @@
     }
 }
 @media(max-width: 576px) {
+  .runline {
+    span {
+      font-size: 42px;
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
     .promo {
+      padding-bottom: 30px;
         &__line {
             height: 37%;
         }
