@@ -57,6 +57,9 @@ body {
   }
   span {
     font-size: 64px;
+    &:first-child {
+      display: block;
+    }
   }
 }
 .article-date {
@@ -245,7 +248,10 @@ body {
 }
 .button {
   padding: 40px 15px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
   max-width: 450px;
   width: 100%;
   font-size: 28px;
@@ -372,7 +378,33 @@ body {
     width: 74%;
   }
   &__adv {
+    position: relative;
     width: 20%;
+  }
+  &__adv-box {
+    position: sticky;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255,1);
+    color: #000;
+    border-radius: 5px;
+    img {
+      margin-bottom: 10px;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+    div {
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    span {
+      display: block;
+      text-align: center;
+    }
   }
   &__author {
     padding-top: 100px;
@@ -570,6 +602,7 @@ body {
     max-width: calcVW(450);
     border-radius: calcVW(120);
     font-size: calcVW(28);
+    gap: calcVW(40);
   }
 
   .divider {
