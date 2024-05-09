@@ -38,6 +38,21 @@
         transform: translate(-50%, -50%);
         cursor: pointer;
         z-index: 3;
+        display: block;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        transition: all .5s ease-in-out;
+        rect {
+            fill: $main;
+            transition: all .5s ease-in-out;
+        }
+        &:hover {
+            
+            border: 1px solid $main;
+            rect {
+                fill: transparent
+            }
+        }
     }
     &__title {
         width: 90%;

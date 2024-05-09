@@ -17,6 +17,13 @@
           transform: rotateY(180deg);
         }
       }
+      .chronicle__link {
+        color: #ffffff;
+        transition: all .5s ease-out;
+        &:hover {
+          color: #000000;
+        }
+      }
     }
  
   }
