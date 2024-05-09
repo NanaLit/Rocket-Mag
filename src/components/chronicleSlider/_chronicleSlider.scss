@@ -59,7 +59,22 @@
         gap: 40px;
         font-weight: 300;
         padding: 45px 0;
-       
+        border: 1px solid transparent;
+        transition: all .5s ease-in-out;
+        svg {
+            path {
+                stroke: #ffffff;
+                transition: all .5s ease-in-out;
+            }
+        }
+        &:hover {
+            color: #000000;
+            svg {
+                path {
+                    stroke: #000000
+                }
+            }
+        }
     }
     &__img {
         display: grid;
@@ -164,10 +179,19 @@
             pointer-events: all;
             cursor: pointer;
             border: 1px solid rgba(123, 54, 255, 1);
+            transition: all .5s ease-in-out;
             svg {
                 path {
                     stroke: #ffffff;
                     transition: all .5s ease-out;
+                }
+            }
+            &:hover {
+                background-color: transparent;
+                svg {
+                    path {
+                        stroke: #000000;
+                    }
                 }
             }
         }

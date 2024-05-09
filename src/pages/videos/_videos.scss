@@ -63,6 +63,9 @@
             cursor: pointer;
             &--active {
                 background-color: $main;
+                &:hover {
+                    background-color: transparent
+                }
             }
         }
         

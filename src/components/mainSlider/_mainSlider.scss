@@ -127,6 +127,10 @@
             pointer-events: all;
             cursor: pointer;
             border: 1px solid rgba(123, 54, 255, 1);
+            transition: all .5s ease-in-out;
+            &:hover {
+                background-color: transparent;
+            }
         }
     }
     &__dec {

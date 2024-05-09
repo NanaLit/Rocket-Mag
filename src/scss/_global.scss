@@ -101,6 +101,17 @@ body {
     svg {
       width: 60px;
       height: 60px;
+      path {
+        stroke: #ffffff;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: $main;;
+        }
+      }
     }
   }
 }
@@ -242,12 +253,17 @@ body {
   border-radius: 120px;
   background-color: rgba(123, 54, 255, 1);
   color: #FFF;
-  border: none;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-in-out;
   outline: none;
   cursor: pointer;
   &--white {
     background-color: #fff;
     color: #000000;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      color: #ffffff;
+    }
   }
   &--arrow {
     position: relative;
@@ -255,6 +271,10 @@ body {
   &--transparent {
     border: 1px solid #fff;
     background-color: transparent;
+  }
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $main;
   }
 }
 
@@ -314,6 +334,7 @@ body {
   &--white {
     p {
       color: #ffffff;
+      // transition: all .5s ease-in-out;
       &:not(:last-child) {
         border-right: 1px solid #fff;
       }
@@ -474,6 +495,10 @@ body {
           background-color: rgba(123, 54, 255, 1);
           pointer-events: all;
           border: 1px solid rgba(123, 54, 255, 1);
+          transition: all 0.5s ease-in-out;
+          &:hover {
+              background-color: transparent
+          }
       }
   }
 }
