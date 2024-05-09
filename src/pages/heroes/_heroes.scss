@@ -51,8 +51,10 @@
   &__img-box {
     width: 100%;
     max-width: 350px;
+    aspect-ratio: 0.6;
     img {
       height: 100%;
+      object-fit: cover;
       border-radius: 200px;
       border: 2px solid #fff;
     }
