@@ -132,7 +132,7 @@
 }
 .numeric {
     display: flex;
-    width: 35%;
+    width: 37%;
     align-items: center;
     justify-content: space-between;
     bottom: 0;
@@ -166,6 +166,7 @@
         height: 120px;
         border-radius: 50%;
         pointer-events: none;
+        opacity: .5;
         transition: all .5s ease-out;
         svg {
             path {
@@ -175,29 +176,39 @@
         }
         
         &--active {
-            background-color: rgba(123, 54, 255, 1);
+            opacity: 1;
+            transition: all .5s ease-in-out;
             pointer-events: all;
             cursor: pointer;
-            border: 1px solid rgba(123, 54, 255, 1);
-            transition: all .5s ease-in-out;
             svg {
                 path {
                     stroke: #ffffff;
                     transition: all .5s ease-out;
                 }
             }
-            &:hover {
-                background-color: transparent;
-                svg {
-                    path {
-                        stroke: #000000;
-                    }
+           
+        }
+        &:hover {
+            background-color: transparent;
+            border: 1px solid rgba(123, 54, 255, 1);
+            svg {
+                path {
+                    stroke: #000000;
                 }
             }
         }
     }
     &__dec {
         margin-right: -15px;
+        svg {
+            path {
+                stroke: #000000;
+            }
+        }
+    }
+    &__inc {
+        background-color: rgba(123, 54, 255, 1);
+        border: 1px solid rgba(123, 54, 255, 1);
     }
 }
 .dotsChronic {

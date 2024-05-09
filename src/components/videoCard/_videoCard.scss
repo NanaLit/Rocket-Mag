@@ -5,6 +5,11 @@
     height: 100%;
     flex-direction: column;
     color: #ffffff;
+    &:hover {
+        .video-card__play {
+            opacity: 1;
+        }
+    }
     &__img {
         width: 100%;
         height: 390px;
@@ -41,6 +46,7 @@
         display: block;
         border: 1px solid transparent;
         border-radius: 50%;
+        opacity: 0;
         transition: all .5s ease-in-out;
         rect {
             fill: $main;
@@ -48,7 +54,7 @@
         }
         &:hover {
             
-            border: 1px solid $main;
+            border: 1px solid rgba(123, 54, 255, .5);
             rect {
                 fill: transparent
             }

@@ -77,14 +77,15 @@
 
 .promo {
     position: relative;
-    padding: 180px 0 100px;
+    padding: 100px 0 100px;
     background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
     &__title {
         color: #ffffff;
         font-weight: 700;
         text-transform: uppercase;
         text-align: center;
-        font-size: 185px;
+        font-size: 165px;
+        margin-bottom: 40px;
     }
     &__inner {
         width: 100%;
@@ -313,9 +314,10 @@
 }
 @media(max-width: 1920px) {
     .promo {
-        padding: calcVW(180) 0 calcVW(100);
+        padding: calcVW(100) 0 calcVW(100);
         &__title {
-            font-size: calcVW(185);
+            font-size: calcVW(165);
+            margin-bottom: calcVW(40);
         }
         &__line {
             width: calc(100vw - calcVW(100));

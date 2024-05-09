@@ -118,20 +118,25 @@
         height: 120px;
         border-radius: 50%;
         pointer-events: none;
+        opacity: .5;
         transition: all .5s ease-out;
         &--active {
-            background-color: rgba(123, 54, 255, 1);
+            opacity: 1;
+            transition: all .5s ease-in-out;
             pointer-events: all;
             cursor: pointer;
+        }
+        &:hover {
+            background-color: transparent;
             border: 1px solid rgba(123, 54, 255, 1);
-            transition: all .5s ease-in-out;
-            &:hover {
-                background-color: transparent;
-            }
         }
     }
     &__dec {
         margin-right: -15px;
+    }
+    &__inc {
+        background-color: rgba(123, 54, 255, 1);
+        border: 1px solid rgba(123, 54, 255, 1);
     }
 }
 @media(max-width: 1920px) {

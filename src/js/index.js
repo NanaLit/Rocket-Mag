@@ -84,10 +84,10 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         })
 
-        tlToggleContent.to(contentWrappers[0], {display: 'block',})
+        tlToggleContent.set(contentWrappers[0], {display: 'block',})
                         .to(contentWrappers[0], {opacity: 1})
                         .to(contentWrappers[1], {opacity: 0})
-                        .to(contentWrappers[1], {display: "none"})
+                        .set(contentWrappers[1], {display: "none"})
 
         const changeContent = (tab, i) => {
             tab.addEventListener('click', () => {
@@ -97,21 +97,21 @@ window.addEventListener("DOMContentLoaded", () => {
                 tab.classList.add('tabs__item--active')
                 const tlToggleContent = gsap.timeline({
                     defaults: {
-                        duration: .5,
+                        duration: .3,
                         ease: 'power1.out',
                         top: 0
                     }
                 })
                 if(i===0) {
                     tlToggleContent.to(contentWrappers[1], {opacity: 0})
-                                    .to(contentWrappers[0], {display: 'block', duration: .1})  
-                                    .to(contentWrappers[1], {display: "none", duration: .1})
+                                    .set(contentWrappers[0], {display: 'block'})  
+                                    .set(contentWrappers[1], {display: "none"})
                                     .to(contentWrappers[0], {opacity: 1})
                                     
                 } else {
                     tlToggleContent.to(contentWrappers[0], {opacity: 0})
-                                    .to(contentWrappers[1], {display: 'block',duration: .1})
-                                    .to(contentWrappers[0], {display: "none", duration: .1})
+                                    .set(contentWrappers[1], {display: 'block'})
+                                    .set(contentWrappers[0], {display: "none"})
                                     .to(contentWrappers[1], {opacity: 1})
                                    
                 }
@@ -131,21 +131,21 @@ window.addEventListener("DOMContentLoaded", () => {
                 const index = tabSlider.activeIndex;
                 const tlToggleContent = gsap.timeline({
                     defaults: {
-                        duration: .5,
+                        duration: .3,
                         ease: 'power1.out',
                         top: 0
                     }
                 })
                 if(index===0) {
                     tlToggleContent.to(contentWrappers[1], {opacity: 0})
-                                    .to(contentWrappers[0], {display: 'block', duration: .1})  
-                                    .to(contentWrappers[1], {display: "none", duration: .1})
+                                    .set(contentWrappers[0], {display: 'block'})  
+                                    .set(contentWrappers[1], {display: "none"})
                                     .to(contentWrappers[0], {opacity: 1})
                                     
                 } else {
                     tlToggleContent.to(contentWrappers[0], {opacity: 0})
-                                    .to(contentWrappers[1], {display: 'block',duration: .1})
-                                    .to(contentWrappers[0], {display: "none", duration: .1})
+                                    .set(contentWrappers[1], {display: 'block'})
+                                    .set(contentWrappers[0], {display: "none"})
                                     .to(contentWrappers[1], {opacity: 1})
                                    
                 }
