@@ -38,7 +38,7 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
 
             const tlToggleContent = gsap.timeline({
                 defaults: {
-                    duration: .5,
+                    duration: .4,
                     ease: 'power1.out'
                 }
             })
@@ -51,40 +51,33 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
                 dot.setAttribute('disabled', true)
             }))
             slides.forEach((slide, i) => {
-                tlToggleContent.to(titleHide, {y: "115%"})
-                                .to(descrHide, {y: "110%"}, "<0")
-                                .to(buttonHide, {y: "110%"}, "<0")
-                                .to(current, {y: "110%"}, "<0")
-                                .to(headingHide, {y: "110%"}, "<0")
-                                .to(imgHide, {y: "110%"}, "<0")
+                tlToggleContent.to(titleHide, {y: "101%"})
+                                .to(descrHide, {y: "101%"}, "<0")
+                                .to(current, {y: "101%"}, "<0")
+                                .to(headingHide, {y: "101%"}, "<0")
+                                .to(imgHide, {y: "101%"}, "<0")
 
 
             })
-            setTimeout(() => {
-                getCurrentZero();
-                getTotalZero();
-                slides.forEach((slide, i) => {
-                    slide.classList.remove(activeSliderClass)
-                })
-            
-                slides[activeSlide].classList.add(activeSliderClass)
+            getCurrentZero();
+            getTotalZero();
+            slides.forEach((slide, i) => {
+                slide.classList.remove(activeSliderClass)
+            })
+        
+            slides[activeSlide].classList.add(activeSliderClass)
 
-                tlToggleContent.to(titleHide, {y: 0})
-                                .to(descrHide, {y: 0}, "<0")
-                                .to(buttonHide, {y: 0}, "<0")
-                                .to(current, {y: 0}, "<0")
-                                .to(headingHide, {y: 0}, "<0")
-                                .to(imgHide, {y: 0}, "<0")
-                setTimeout(() => {
-                    btns.forEach(btn => {
-                        btn.removeAttribute('disabled')
-                    },)
-                    dots.forEach((dot => {
-                        dot.removeAttribute('disabled')
-                    }))
-                }, 500)
-            
-            }, 700)
+            tlToggleContent.to(titleHide, {y: 0})
+                            .to(descrHide, {y: 0}, "<0")
+                            .to(current, {y: 0}, "<0")
+                            .to(headingHide, {y: 0}, "<0")
+                            .to(imgHide, {y: 0}, "<0")
+            btns.forEach(btn => {
+                btn.removeAttribute('disabled')
+            },)
+            dots.forEach((dot => {
+                dot.removeAttribute('disabled')
+            }))
             changeActiveDots();
             changeActiveBtn();
         }

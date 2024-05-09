@@ -212,10 +212,10 @@ body {
   bottom: 0;
   right: 0;
   // animation: tvShow .5s linear infinite;
-  opacity: 1;
+  opacity: .5;
   background-image: url(/img/noise2.png);
   pointer-events: none;
-  z-index: 2;
+  z-index: 0;
 }
 @keyframes tvShow {
   0%{
@@ -285,6 +285,7 @@ body {
   &--right {
     justify-content: end;
   }
+ 
   &--mobile {
     display: none;
   }
@@ -295,7 +296,11 @@ body {
     width: calc(100vw - (100vw - 1640px)/2);
   }
 }
-
+.divider.divider--full {
+  span {
+    width: 100%;
+  }
+}
 .side {
   width: 100%;
   display: flex;
@@ -490,17 +495,26 @@ body {
       height: 120px;
       border-radius: 50%;
       transition: all .5s ease-out;
-      cursor: pointer;
+      pointer-events: none;
+      opacity: 0.5;
       &--active {
-          background-color: rgba(123, 54, 255, 1);
-          pointer-events: all;
-          border: 1px solid rgba(123, 54, 255, 1);
-          transition: all 0.5s ease-in-out;
-          &:hover {
-              background-color: transparent
-          }
+        opacity: 1;
+        transition: all .5s ease-in-out;
+        pointer-events: all;
+        cursor: pointer;
+      }
+      &:hover {
+        background-color: transparent;
+        border: 1px solid rgba(123, 54, 255, 1);
       }
   }
+  &__dec {
+    margin-right: -15px;
+}
+&__inc {
+    background-color: rgba(123, 54, 255, 1);
+    border: 1px solid rgba(123, 54, 255, 1);
+}
 }
 // стили для статей end
 
