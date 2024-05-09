@@ -54,7 +54,7 @@
         margin-bottom: 30px;
         width: 90%;
         display: block;
-        height: 61px;
+        height: 64px;
         overflow: hidden;
     }
     &::after {
@@ -106,7 +106,7 @@
         &__descr {
             margin-left: calcVW(30);
             margin-bottom: calcVW(30);
-            height: calcVW(61);
+            height: calcVW(64);
         }
         &::after {
             top: calcVW(10);
@@ -132,6 +132,7 @@
 }
 @media(max-width: 768px) {
     .card {
+        width: 48%;
         &:nth-child(7),
         &:nth-child(8),
         &:nth-child(9) {
@@ -140,14 +141,6 @@
 
         &__img {
             height: 250px;
-        }
-        &__hot {
-            right: 10px;
-            width: 50px;
-            height: 20px;
-            bottom: -10px;
-            font-size: 10px;
-            border-radius: 20px;
         }
         &__title {
             margin-left: 15px;
@@ -160,10 +153,12 @@
             margin-left: 15px;
             margin-bottom: 20px;
             height: 45px;
+            font-size: 10px;
         }
         &::after {
             top:5px;
             left: 5px;
+            pointer-events: none;
         }
         &:nth-child(6n + 4),
         &:nth-child(6n + 5),
@@ -178,9 +173,19 @@
                 margin-left: 15px;
             }
             .card__hot {
-                right: 10px;
+                right: 20px;
+                width: 70px;
+                height: 30px;
+                font-size: 20px;
             }
         }
+    }
+    .card__hot {
+        right: 20px;
+        width: 70px;
+        height: 30px;
+        font-size: 20px;
+        bottom: -15px;
     }
 }
 @media(max-width: 576px) {
