@@ -58,8 +58,8 @@
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 41% 20% 9% 21%;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-rows: repeat(3, calcVW(160));
+    gap: 3%;
     img {
       border-radius: 20px;
       width: 100%;
