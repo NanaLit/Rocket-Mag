@@ -27,6 +27,11 @@
     &::after {
       top: -15px;
     }
+    &:hover {
+      .video-card__play {
+        opacity: 1;
+      }
+    }
   }
   &__poster {
     height: 100%;
@@ -86,6 +91,16 @@
           width: calcVW(48);
           height: calcVW(48);
         }
+      }
+    }
+  }
+}
+
+@media(max-width: 991px) {
+  .article-hero {
+    &__top-video {
+      .video-card__play {
+        opacity: 1;
       }
     }
   }
