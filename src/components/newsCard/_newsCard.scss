@@ -3,6 +3,25 @@
     display: flex;
     position: relative;
     cursor: pointer;
+    &::after {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 10px;
+      left: 10px;
+      border: 2px solid $main;
+      transition: border .3s ease-in-out;
+    }
+    &:hover {
+      &::after {
+        border-color: #FF36EB;
+      }
+      & .card__hot {
+        background-color: #FF36EB;
+      }
+    }
     a {
         display: flex;
         width: 100%;
@@ -35,6 +54,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: background-color .3s ease-in-out;
     }
     &__title {
         width: 90%;
@@ -56,16 +76,6 @@
         display: block;
         height: 64px;
         overflow: hidden;
-    }
-    &::after {
-        pointer-events: none;
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 10px;
-        left: 10px;
-        border: 2px solid $main;
     }
     &:nth-child(6n + 4),
     &:nth-child(6n + 5),

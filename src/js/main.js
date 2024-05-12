@@ -37,7 +37,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // }
   menu();
-  
+  document.querySelector('.to-top').addEventListener('click', (e) => {
+    window.scrollTo(0, 0);
+  })
   const footerSlider = new Swiper('.footer__slider', {
   breakpoints: {
     // when window width is >= 320px
