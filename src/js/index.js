@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const current = document.querySelector('.counter__current');
         const indicators = document.createElement('ul');
 
-        sliderEngine(slider, slides, total, btns, prevBtn, nextBtn, current, indicators, 'active', '.slider__title span', ".slider__descr span", ".slider__button", ".slider__heading p",".slider__img img", 'slider__item--active', 'counter__btn--active', 'dots', 'dots__item', 'dots__item--active')
+        sliderEngine(slider, slides, total, btns, prevBtn, nextBtn, current, indicators, 'active', '.slider__title span', ".slider__descr span", ".slider__back", ".slider__heading p",".slider__img img", 'slider__item--active', 'counter__btn--active', 'dots', 'dots__item', 'dots__item--active')
     }
     
     if(document.querySelector('.heroes')) {
@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const currentHero = document.querySelector('.scors__current');
         const indicatorsHero = document.createElement('ul');
 
-        sliderEngine(sliderHero, slidesHero, totalHero, btnsHero, prevBtnHero, nextBtnHero, currentHero, indicatorsHero, 'activeHero', '.heroes__title p', ".heroes__descr span", ".heroes__button", ".heroes__heading p",".heroes__img img", 'heroes__item--active', 'scors__btn--active', 'dotsHero', 'dotsHero__item', 'dotsHero__item--active')
+        sliderEngine(sliderHero, slidesHero, totalHero, btnsHero, prevBtnHero, nextBtnHero, currentHero, indicatorsHero, 'activeHero', '.heroes__title p', ".heroes__descr span", ".heroes__back", ".heroes__heading p",".heroes__img img", 'heroes__item--active', 'scors__btn--active', 'dotsHero', 'dotsHero__item', 'dotsHero__item--active')
     }
 
     
@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const currentChronicle = document.querySelector('.numeric__current');
         const indicatorsChronicle = document.createElement('ul');
 
-        sliderEngine(sliderChronicle, slidesChronicle, totalChronicle, btnsChronicle, prevBtnChronicle, nextBtnChronicle, currentChronicle, indicatorsChronicle, 'activeChronicle', '.chronic__title span', ".chronic__descr span", ".chronic__button", ".chronic__heading p",".chronic__img img", 'chronic__item--active', 'numeric__btn--active', 'dotsChronic', 'dotsChronic__item', 'dotsChronic__item--active')
+        sliderEngine(sliderChronicle, slidesChronicle, totalChronicle, btnsChronicle, prevBtnChronicle, nextBtnChronicle, currentChronicle, indicatorsChronicle, 'activeChronicle', '.chronic__title span', ".chronic__descr span", ".chronic__back", ".chronic__heading p",".chronic__img img", 'chronic__item--active', 'numeric__btn--active', 'dotsChronic', 'dotsChronic__item', 'dotsChronic__item--active')
     }
 
     if(document.querySelector('.tabs')) {

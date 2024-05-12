@@ -65,12 +65,24 @@
         width: 98%;
         height: 620px;
         overflow: hidden;
+        position: relative;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: brightness(.8);
+            position: relative;
         }
+        
+    }
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+        z-index: 1;
     }
     &__heading {
         position: absolute;
@@ -81,6 +93,7 @@
         font-weight: 300;
         text-transform: uppercase;
         overflow: hidden;
+        z-index: 2;
         span {
             height: 45px;
             display: block;
@@ -136,6 +149,7 @@
     }
     &__dec {
         margin-right: -15px;
+        
     }
     &__inc {
         background-color: rgba(123, 54, 255, 1);
@@ -307,7 +321,15 @@
             height: 70px;
         }
         &__dec {
-            margin-right: 0
+            margin-right: 0;
+            &:hover {
+                border: 1px solid #ffffff;
+            }
+        }
+        &__inc {
+            &:hover {
+                background-color: $main;
+            }
         }
     }
 

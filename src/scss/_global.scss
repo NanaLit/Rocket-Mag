@@ -862,6 +862,17 @@ body {
         width: 60px;
         height: 60px;
     }
+    &__dec {
+      &:hover {
+        border: 1px solid #ffffff;
+      }
+    }
+    &__inc {
+      &:hover {
+        border: 1px solid $main;
+        background-color: $main;
+      }
+    }
   }
   .descr {
     margin-bottom: 20px;
