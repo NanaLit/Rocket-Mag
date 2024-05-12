@@ -158,7 +158,7 @@
 }
 
 .news {
-    padding: 200px 0 0;
+    padding: 180px 0 0;
     background-color: #ffffff;
     position: relative;
     &__title {
@@ -396,7 +396,7 @@
     }
 
     .news {
-        padding: calcVW(200) 0 0;
+        padding: calcVW(180) 0 0;
         &__title {
           margin-bottom: calcVW(100);
           font-size: calcVW(128);
