@@ -16,12 +16,6 @@
       .chronicle__swiper {
         order: -1;
       }
-      .chronicle__date {
-        color: $main;
-        &::after {
-          background-color: #000;
-        }
-      }
       .chronicle__img-box {
         transform: rotateY(180deg);
         img {
@@ -87,21 +81,7 @@
       }
     }
   }
-  &__date {
-    position: relative;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    font-size: 24px;
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100px;
-      height: 1px;
-      background-color: #fff;
-    }
-  }
+
   &__name {
     margin-bottom: 20px;
     font-size: 48px;
@@ -128,11 +108,6 @@
     &__item {
       padding: calcVW(100) 0;
     }
-    &__date {
-      margin-bottom: calcVW(30);
-      padding-bottom: calcVW(30);
-      font-size: calcVW(24);
-    }
     &__name {
       font-size: calcVW(48);
     }
@@ -147,9 +122,6 @@
 
 @media (max-width: 991px) {
   .chronicle {
-    &__date {
-      font-size: 16px;
-    }
     &__swiper {
       width: 53%;
     }
@@ -191,14 +163,6 @@
         box-sizing: border-box;
         border-radius: 20px;
         border: 2px solid $main;
-      }
-    }
-    &__date {
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      &::after {
-        left: 50%;
-        transform: translateX(-50%);
       }
     }
     &__name {

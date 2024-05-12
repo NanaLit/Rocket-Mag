@@ -1,3 +1,31 @@
+.to-top {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  z-index: 3;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $main;
+  border-radius: 50%;
+  background-color: $main;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  svg {
+    transform: rotate(-90deg);
+    path {
+      transition: all .3s ease-in-out;
+    }
+  }
+  &:hover {
+    background-color: #fff;
+    svg path {
+      stroke: $main;
+    }
+  }
+}
 .footer {
   padding-bottom: 100px;
   color: #fff;
@@ -36,6 +64,9 @@
       border: 1px solid transparent;
       border-radius: 50%;
       transition: all .5s ease-in-out;
+      path {
+        transition: all .5s ease-in-out;
+      }
       circle {
         fill: $main;
         transition: all .5s ease-in-out;
@@ -45,6 +76,9 @@
           border: 1px solid $main;
           circle {
             fill: transparent
+          }
+          .to-black {
+            fill: #000;
           }
       }
     }
@@ -116,6 +150,14 @@
 }
 
 @media (max-width: 1920px) {
+  .to-top {
+    width: calcVW(80);
+    height: calcVW(80);
+    svg {
+      width: calcVW(27);
+      height: calcVW(20);
+    }
+  }
   .footer {
     padding-bottom: calcVW(100);
     &__title {
@@ -155,6 +197,16 @@
   }
  
 @media (max-width: 1280px) {
+  .to-top {
+    left: 20px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    svg {
+      width: 21px;
+      height: 14px;
+    }
+  }
   .footer {
     &__social {
       a svg {
@@ -188,6 +240,7 @@
 }
 @media (max-width: 768px) {
   .footer {
+    padding-bottom: 80px;
     &__contacts {
       flex-direction: column;
       gap: 40px;
