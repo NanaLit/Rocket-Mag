@@ -1,4 +1,4 @@
-const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, indicators, storageName, titleHide, descrHide, buttonHide, headingHide, imgHide, activeSliderClass, btnActiveClass, dotsContainer, dotsItemClass, dotsItemActiveClass) => {
+const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, indicators, storageName, titleHide, descrHide, maskHide, headingHide, imgHide, activeSliderClass, btnActiveClass, dotsContainer, dotsItemClass, dotsItemActiveClass) => {
     let dots = [];
     indicators.classList.add(dotsContainer);
     slider.append(indicators);
@@ -38,7 +38,7 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
 
             const tlToggleContent = gsap.timeline({
                 defaults: {
-                    duration: .4,
+                    duration: .15,
                     ease: 'power1.out'
                 }
             })
@@ -51,11 +51,12 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
                 dot.setAttribute('disabled', true)
             }))
             slides.forEach((slide, i) => {
-                tlToggleContent.to(titleHide, {y: "101%"})
-                                .to(descrHide, {y: "101%"}, "<0")
+                tlToggleContent.to(titleHide, {x: "-101%"})
+                                .to(descrHide, {x: "-101%"}, "<0")
+                                .to(maskHide, {x: "-101%"}, "<0")
                                 .to(current, {y: "101%"}, "<0")
-                                .to(headingHide, {y: "101%"}, "<0")
-                                .to(imgHide, {y: "101%"}, "<0")
+                                .to(headingHide, {x: "-101%"}, "<0")
+                                .to(imgHide, {x: "-101%"}, "<0")
 
 
             })
@@ -67,11 +68,12 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
         
             slides[activeSlide].classList.add(activeSliderClass)
 
-            tlToggleContent.to(titleHide, {y: 0})
-                            .to(descrHide, {y: 0}, "<0")
+            tlToggleContent.to(titleHide, {x: 0})
+                            .to(descrHide, {x: 0}, "<0")
+                            .to(maskHide, {x: 0}, "<0")
                             .to(current, {y: 0}, "<0")
-                            .to(headingHide, {y: 0}, "<0")
-                            .to(imgHide, {y: 0}, "<0")
+                            .to(headingHide, {x: 0}, "<0")
+                            .to(imgHide, {x: 0}, "<0")
             btns.forEach(btn => {
                 btn.removeAttribute('disabled')
             },)
@@ -114,10 +116,10 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
     
         let refreshLocalStorage
     
-        refreshLocalStorage = setInterval( () => { autoStorage() }, 7999);
+        refreshLocalStorage = setInterval( () => { autoStorage() }, 14999);
     
         let refreshIntervalId
-        refreshIntervalId = setInterval( () => {changeSlides()},8000);
+        refreshIntervalId = setInterval( () => {changeSlides()},15000);
     
     
     
@@ -128,8 +130,8 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
                 localStorage.setItem(storageName, i)
                 activeSlide = localStorage.getItem(storageName)
                 changeSlides()
-                refreshLocalStorage = setInterval( () => { autoStorage() }, 7999);
-                refreshIntervalId = setInterval( () => {changeSlides()},8000);
+                refreshLocalStorage = setInterval( () => { autoStorage() }, 14999);
+                refreshIntervalId = setInterval( () => {changeSlides()},15000);
             })
         })
     
@@ -139,8 +141,8 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
             activeSlide = +localStorage.getItem(storageName) + 1;
             localStorage.setItem(storageName, activeSlide)
             changeSlides();
-            refreshLocalStorage = setInterval( () => { autoStorage() }, 7999);
-            refreshIntervalId = setInterval( () => {changeSlides()},8000);
+            refreshLocalStorage = setInterval( () => { autoStorage() }, 14999);
+            refreshIntervalId = setInterval( () => {changeSlides()},15000);
     
         })
     
@@ -150,8 +152,8 @@ const sliderEngine = (slider, slides, total, btns, prevBtn, nextBtn, current, in
             activeSlide = +localStorage.getItem(storageName) - 1;
             localStorage.setItem(storageName, activeSlide)
             changeSlides();
-            refreshLocalStorage = setInterval( () => { autoStorage() }, 7999);
-            refreshIntervalId = setInterval( () => {changeSlides()},8000);
+            refreshLocalStorage = setInterval( () => { autoStorage() }, 14999);
+            refreshIntervalId = setInterval( () => {changeSlides()},15000);
     
         })
 }

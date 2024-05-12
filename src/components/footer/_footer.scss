@@ -17,6 +17,11 @@
   &__contact {
     width: 30%;
     font-size: 32px;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      color: $main;
+    }
     &:last-child {
       text-align: right;
     }
@@ -189,6 +194,8 @@
       align-items: start;
     }
     &__social {
+      width: 100%;
+      justify-content: space-between;
       order: 1;
       a svg {
         width: 50px;

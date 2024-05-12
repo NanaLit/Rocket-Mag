@@ -186,7 +186,9 @@
     .button {
         display: none;
     }
+   
 }
+
 
 .hero {
     position: relative;
@@ -420,7 +422,7 @@
 
 @media(max-width: 768px) {
     .promo {
-        padding: 140px 0 60px;
+        padding: 30px 0 60px;
         &__line {
             width: calc(100vw - 17px);
             height: 47%;
@@ -499,7 +501,16 @@
             }
         }
     }
+    .card,
+    .video-card {
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+            display: none;
+        }
 
+    }
     .hero {
         padding: 230px 0 30px;
         position: relative;
@@ -568,6 +579,7 @@
     }
     .video {
         padding: 60px 0 0;
+        position: relative;
         &__list {
             row-gap: 30px;
             margin-bottom: 20px;
