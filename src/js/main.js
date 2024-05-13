@@ -40,20 +40,20 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector('.to-top').addEventListener('click', (e) => {
     window.scrollTo(0, 0);
   })
-  const footerSlider = new Swiper('.footer__slider', {
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1.2,
-      spaceBetween: 20
-    },
-    576: {
-      slidesPerView: 2.2,
-      spaceBetween: 40
-    },
-    768: {
-      slidesPerView: 'auto',
-    }
-  }
-  });
+  // const footerSlider = new Swiper('.footer__slider', {
+  // breakpoints: {
+  //   // when window width is >= 320px
+  //   320: {
+  //     slidesPerView: 1.2,
+  //     spaceBetween: 20
+  //   },
+  //   576: {
+  //     slidesPerView: 2.2,
+  //     spaceBetween: 40
+  //   },
+  //   768: {
+  //     slidesPerView: 'auto',
+  //   }
+  // }
+  // });
 });

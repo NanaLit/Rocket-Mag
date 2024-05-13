@@ -9,49 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
     
         video(videoCardsButtons, videoWrappers, videos);
     }
-   
-
-
-    if(document.querySelector('.slider .container')) {
-        const slider = document.querySelector('.slider .container')
-        const slides = document.querySelectorAll('.slider__item');
-        const total = document.querySelector('.counter__total');
-        const btns = document.querySelectorAll('.counter__btn');
-        const prevBtn = document.querySelector('.counter__dec');
-        const nextBtn = document.querySelector('.counter__inc');
-        const current = document.querySelector('.counter__current');
-        const indicators = document.createElement('ul');
-
-        sliderEngine(slider, slides, total, btns, prevBtn, nextBtn, current, indicators, 'active', '.slider__title span', ".slider__descr span", ".slider__back", ".slider__heading p",".slider__img img", 'slider__item--active', 'counter__btn--active', 'dots', 'dots__item', 'dots__item--active')
-    }
-    
-    if(document.querySelector('.heroes')) {
-        const sliderHero = document.querySelector('.heroes')
-        const slidesHero = document.querySelectorAll('.heroes__item');
-        const totalHero = document.querySelector('.scors__total');
-        const btnsHero = document.querySelectorAll('.scors__btn');
-        const prevBtnHero = document.querySelector('.scors__dec');
-        const nextBtnHero = document.querySelector('.scors__inc');
-        const currentHero = document.querySelector('.scors__current');
-        const indicatorsHero = document.createElement('ul');
-
-        sliderEngine(sliderHero, slidesHero, totalHero, btnsHero, prevBtnHero, nextBtnHero, currentHero, indicatorsHero, 'activeHero', '.heroes__title p', ".heroes__descr span", ".heroes__back", ".heroes__heading p",".heroes__img img", 'heroes__item--active', 'scors__btn--active', 'dotsHero', 'dotsHero__item', 'dotsHero__item--active')
-    }
-
-    
-    if(document.querySelector('.chronic')) {
-        const sliderChronicle = document.querySelector('.chronic')
-        const slidesChronicle = document.querySelectorAll('.chronic__item');
-        const totalChronicle = document.querySelector('.numeric__total');
-        const btnsChronicle = document.querySelectorAll('.numeric__btn');
-        const prevBtnChronicle = document.querySelector('.numeric__dec');
-        const nextBtnChronicle = document.querySelector('.numeric__inc');
-        const currentChronicle = document.querySelector('.numeric__current');
-        const indicatorsChronicle = document.createElement('ul');
-
-        sliderEngine(sliderChronicle, slidesChronicle, totalChronicle, btnsChronicle, prevBtnChronicle, nextBtnChronicle, currentChronicle, indicatorsChronicle, 'activeChronicle', '.chronic__title span', ".chronic__descr span", ".chronic__back", ".chronic__heading p",".chronic__img img", 'chronic__item--active', 'numeric__btn--active', 'dotsChronic', 'dotsChronic__item', 'dotsChronic__item--active')
-    }
-
     if(document.querySelector('.tabs')) {
         const tabSlider = new Swiper(".tabs", {
             observer: true,
@@ -70,13 +27,13 @@ window.addEventListener("DOMContentLoaded", () => {
                     slidesPerView: 1,
                 },
                 769: {
-                    slidesPerView: 3.5,
+                    slidesPerView: 3.33,
                 },
             }
         });
 
         const tabs = document.querySelectorAll('.tabs__item');
-        const contentWrappers = document.querySelectorAll('.videos__container')
+        const contentWrappers = document.querySelectorAll('.content__container')
         const tlToggleContent = gsap.timeline({
             defaults: {
                 duration: .5,
@@ -87,7 +44,9 @@ window.addEventListener("DOMContentLoaded", () => {
         tlToggleContent.set(contentWrappers[0], {display: 'block',})
                         .to(contentWrappers[0], {opacity: 1})
                         .to(contentWrappers[1], {opacity: 0})
+                        .to(contentWrappers[2], {opacity: 0}, "<0")
                         .set(contentWrappers[1], {display: "none"})
+                        .set(contentWrappers[2], {display: "none"})
 
         const changeContent = (tab, i) => {
             tab.addEventListener('click', () => {
@@ -104,16 +63,28 @@ window.addEventListener("DOMContentLoaded", () => {
                 })
                 if(i===0) {
                     tlToggleContent.to(contentWrappers[1], {opacity: 0})
+                                    .to(contentWrappers[2], {opacity: 0}, "<0")
                                     .set(contentWrappers[0], {display: 'block'})  
                                     .set(contentWrappers[1], {display: "none"})
+                                    .set(contentWrappers[2], {display: "none"})
                                     .to(contentWrappers[0], {opacity: 1})
                                     
-                } else {
+                                    
+                } else if(i===1) {
                     tlToggleContent.to(contentWrappers[0], {opacity: 0})
+                                    .to(contentWrappers[2], {opacity: 0}, "<0")
                                     .set(contentWrappers[1], {display: 'block'})
                                     .set(contentWrappers[0], {display: "none"})
+                                    .set(contentWrappers[2], {display: "none"})
                                     .to(contentWrappers[1], {opacity: 1})
                                    
+                } else {
+                    tlToggleContent.to(contentWrappers[0], {opacity: 0})
+                                    .to(contentWrappers[1], {opacity: 0}, "<0")
+                                    .set(contentWrappers[2], {display: 'block'})
+                                    .set(contentWrappers[1], {display: "none"})
+                                    .set(contentWrappers[0], {display: "none"})
+                                    .to(contentWrappers[2], {opacity: 1})
                 }
             })
         }
@@ -155,6 +126,48 @@ window.addEventListener("DOMContentLoaded", () => {
 
         
     }
+   
+    if(document.querySelector('.slider .container')) {
+        const slider = document.querySelector('.slider .container')
+        const slides = document.querySelectorAll('.slider__item');
+        const total = document.querySelector('.counter__total');
+        const btns = document.querySelectorAll('.counter__btn');
+        const prevBtn = document.querySelector('.counter__dec');
+        const nextBtn = document.querySelector('.counter__inc');
+        const current = document.querySelector('.counter__current');
+        const indicators = document.createElement('ul');
+
+        sliderEngine(slider, slides, total, btns, prevBtn, nextBtn, current, indicators, 'active', '.slider__title span', ".slider__descr span", ".slider__back", ".slider__heading p",".slider__img img", 'slider__item--active', 'counter__btn--active', 'dots', 'dots__item', 'dots__item--active')
+    }
+    
+    if(document.querySelector('.heroes')) {
+        const sliderHero = document.querySelector('.heroes')
+        const slidesHero = document.querySelectorAll('.heroes__item');
+        const totalHero = document.querySelector('.scors__total');
+        const btnsHero = document.querySelectorAll('.scors__btn');
+        const prevBtnHero = document.querySelector('.scors__dec');
+        const nextBtnHero = document.querySelector('.scors__inc');
+        const currentHero = document.querySelector('.scors__current');
+        const indicatorsHero = document.createElement('ul');
+
+        sliderEngine(sliderHero, slidesHero, totalHero, btnsHero, prevBtnHero, nextBtnHero, currentHero, indicatorsHero, 'activeHero', '.heroes__title p', ".heroes__descr span", ".heroes__back", ".heroes__heading p",".heroes__img img", 'heroes__item--active', 'scors__btn--active', 'dotsHero', 'dotsHero__item', 'dotsHero__item--active')
+    }
+
+    
+    if(document.querySelector('.chronic')) {
+        const sliderChronicle = document.querySelector('.chronic')
+        const slidesChronicle = document.querySelectorAll('.chronic__item');
+        const totalChronicle = document.querySelector('.numeric__total');
+        const btnsChronicle = document.querySelectorAll('.numeric__btn');
+        const prevBtnChronicle = document.querySelector('.numeric__dec');
+        const nextBtnChronicle = document.querySelector('.numeric__inc');
+        const currentChronicle = document.querySelector('.numeric__current');
+        const indicatorsChronicle = document.createElement('ul');
+
+        sliderEngine(sliderChronicle, slidesChronicle, totalChronicle, btnsChronicle, prevBtnChronicle, nextBtnChronicle, currentChronicle, indicatorsChronicle, 'activeChronicle', '.chronic__title span', ".chronic__descr span", ".chronic__back", ".chronic__heading p",".chronic__img img", 'chronic__item--active', 'numeric__btn--active', 'dotsChronic', 'dotsChronic__item', 'dotsChronic__item--active')
+    }
+
+ 
     if(document.querySelector('.article-main__slider')) {
         const slides = document.querySelectorAll('.article-main__slider-item')
         const buttons = document.querySelectorAll('.article-counter__btn')
