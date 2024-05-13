@@ -27,49 +27,14 @@
     &__btn {
         margin: 100px auto 0;
     }
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: start;
-        column-gap: 30px;
-        row-gap: 50px;
-    }
-    .container--vid {
-        display: block;
-    }
-    &__container {
-        width: 100%;
-        opacity: 0;
-    }
+    
+   
+   
     .divider {
         margin-top: 120px;
         margin-bottom: 100px;
     }
-    .tabs {
-        margin-bottom: 100px;
-        padding-left: calc((100vw - 1640px) / 2);
-        &__item {
-            background-color: transparent;
-            border: 1px solid $main;
-            transition: background-color 0.5s ease-in-out;
-            cursor: pointer;
-            box-sizing: border-box;
-            padding: 40px 15px;
-            font-size: 28px;
-            text-align: center;
-            border-radius: 120px;
-            color: #FFF;
-            outline: none;
-            cursor: pointer;
-            &--active {
-                background-color: $main;
-                &:hover {
-                    background-color: transparent
-                }
-            }
-        }
-        
-    }
+   
 }
 
 @media(max-width: 1920px) {
@@ -89,9 +54,7 @@
             }
     
         }
-        &__list {
-            column-gap: calcVW(30)
-        }
+       
         &__btn {
             margin: calcVW(100) auto 0;
           }
@@ -99,15 +62,7 @@
             margin-top: calcVW(120);
             margin-bottom: calcVW(100);
         }
-        .tabs {
-            margin-bottom: calcVW(100);
-            padding-left: calcVW(140);
-            &__item {
-                padding: calcVW(40) calcVW(15);
-                font-size: calcVW(28);
-                border-radius: calcVW(120);
-            }
-        }
+       
     }
    
 }
@@ -115,7 +70,7 @@
     .videos {
         padding: 40px 0;
         .video-card {
-            width: 48%;
+            width: 100%;
         }
         &__title {
             font-size: 36px;
@@ -124,9 +79,7 @@
                 font-size: 16px;
             }
         }
-        &__list {
-            column-gap: 10px;
-        }
+      
         &__btn {
             margin: 30px auto 0;
           }
@@ -134,15 +87,6 @@
             margin-top: 30px;
             margin-bottom: 60px;
         }
-        .tabs {
-            margin-bottom: 30px;
-            padding-left: 20px;
-            padding-right: 10%;
-            &__item {
-                padding: 21px 10px;
-                font-size: 16px;
-                border-radius: 60px;
-            }
-        }
+        
     }
 }

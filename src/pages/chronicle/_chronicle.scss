@@ -98,7 +98,7 @@
     margin-bottom: 50px;
   }
   &__btn {
-    margin: 0 auto;
+    margin: 100px auto 0;
   }
 }
 
@@ -116,6 +116,9 @@
     }
     &__text {
       margin-bottom: calcVW(50);
+    }
+    &__btn {
+      margin: calcVW(100) auto 0;
     }
   }
 }
@@ -181,6 +184,7 @@
     }
     &__btn {
       max-width: 100%;
+      margin: 40px auto 0;
     }
   }
 }
@@ -189,5 +193,6 @@
     &__item {
       padding: 40px 0;
     }
+    
   }
 }
