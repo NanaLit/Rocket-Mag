@@ -303,7 +303,7 @@
 }
 
 .video {
-    padding: 180px 0 200px;
+    padding: 180px 0 80px;
     background: radial-gradient(rgba(60, 29, 118, 1), rgba(0, 0, 0, 1));
     &__wrapper {
         width: 100%;
@@ -446,7 +446,7 @@
         }
     }
     .video {
-        padding: calcVW(180) 0 calcVW(200);
+        padding: calcVW(180) 0 calcVW(80);
         &__descr {
             padding-top: calcVW(100);
             height: calcVW(1700);
